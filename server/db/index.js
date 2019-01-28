@@ -3,7 +3,7 @@
 
 */
 const mongoose = require('mongoose')
-MONGODB_URI = "Justin-Singh125125:Chaosdo502@ds163254.mlab.com:63254/project-3";
+MONGODB_URI = "test:testing1@ds163254.mlab.com:63254/project-3";
 mongoose.connect(MONGODB_URI);
 
 mongoose.connect(MONGODB_URI, () => {
