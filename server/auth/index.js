@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const User = require('../db/models/user')
 const passport = require('../passport')
+const path = require('path')
 
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
 router.get(
@@ -75,6 +76,14 @@ router.post('/signup', (req, res) => {
 
 router.get("/test", (req, res) => {
 	res.json("test");
+})
+
+router.get('/*', function (req, res) {
+	res.sendFile(path.join(__dirname, '../../build/index.html'), function (err) {
+		if (err) {
+			res.status(500).send(err)
+		}
+	})
 })
 
 module.exports = router

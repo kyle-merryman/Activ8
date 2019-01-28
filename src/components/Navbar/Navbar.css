@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.menu-area{
+    margin-bottom:-20px;
+}
+.menu-area a{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #cb3529;
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.menu-area a:hover{
+    background: tomato;
+    color: #fff;
+}
+.menu-area ul{
+    list-style: none;
+    display: flex;
+}
+
+.menu-area ul li{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-area li:hover .dropdown li{
+    top: 0;
+    visibility: visible;
+}
+.dropdown li{
+    visibility: hidden;
+}
+
+.dropdown ul li{
+    display: none;
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+}
+
+#logo{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 30px;
+    color: #fff;
+}
+#logo:hover{
+     background: #cb3529;
+
+}
