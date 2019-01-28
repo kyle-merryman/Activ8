@@ -15,6 +15,7 @@ export default class App extends Component {
 	componentDidMount() {
 		axios.get("/auth/user").then(user => {
 			if (user.data.user !== null) {
+				// have to use user.data.user
 				console.log(user.data.user);
 				this.setState({ displayName: user.data.user.displayName })
 			}
