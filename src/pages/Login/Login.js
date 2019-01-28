@@ -14,6 +14,7 @@ export default class Login extends Component {
         })
     }
     render() {
+        // test
         return (
             <div className="center-this" >
                 <a href="/auth/google">
