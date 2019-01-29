@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./Login.css";
 import axios from "axios";
-
+import FontAwesome from "react-fontawesome";
 export default class Login extends Component {
 
 
@@ -15,10 +15,27 @@ export default class Login extends Component {
     }
     render() {
         return (
-            <div className="center-this" >
-                <a href="/auth/google">
-                    <button type="button" className="btn btn-danger google-login">Sign In</button>
-                </a>
+            <div id="login-page">
+                <div className="jumbotron">
+                    <h2>ACTIV8</h2>
+
+                </div>
+                <div className="center-this" >
+
+                    <ul id="google">
+                        <li>
+                            <a href="/auth/google">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span id="logo" ><FontAwesome style={{ color: "#4d4c4c" }} name='globe-americas' />
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         )
     }

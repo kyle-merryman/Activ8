@@ -7,6 +7,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login/Login";
 import About from './pages/Login/About/About';
 
+
 export default class App extends Component {
 	state = {
 		displayName: ""
@@ -35,11 +36,9 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-
-				<Route exact path="/" component={Login} />
-
-				<Route exact path="/login" component={Login} />
 				<Navbar logout={this.logout} displayName={this.state.displayName} />
+				<Route exact path="/" component={Login} />
+				<Route exact path="/login" component={Login} />
 				<Route exact path="/home" component={Home} />
 				<Route exact path="/about" component={About} />
 
