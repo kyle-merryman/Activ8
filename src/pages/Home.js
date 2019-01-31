@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 import axios from "axios";
-import Navbar from "../components/Navbar/Navbar";
+
 
 export default class Home extends Component {
 
@@ -15,6 +14,7 @@ export default class Home extends Component {
             if (user.data === null) {
                 window.location.replace("/")
             } else {
+                console.log(user)
                 this.setState({ user: user.data })
             }
         })
