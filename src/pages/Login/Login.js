@@ -24,7 +24,7 @@ export default class Login extends Component {
 
                     <ul id="google">
                         <li>
-                            <a href="/auth/google">
+                            <a href="/signin">
                                 <span></span>
                                 <span></span>
                                 <span></span>

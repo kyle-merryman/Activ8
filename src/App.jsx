@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import axios from 'axios';
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home"
 import Login from "./pages/Login/Login";
 import About from './pages/Login/About/About';
-
+import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
 
 export default class App extends Component {
 	state = {
@@ -36,11 +37,16 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar logout={this.logout} displayName={this.state.displayName} />
-				<Route exact path="/" component={Login} />
-				<Route exact path="/login" component={Login} />
-				<Route exact path="/home" component={Home} />
-				<Route exact path="/about" component={About} />
+
+
+				<Switch>
+					<Route exact path="/" component={SignIn} />
+					<Route exact path="/signin" component={SignIn} />
+					<Route exact path="/signup" component={SignUp} />
+					<Navbar logout={this.logout} displayName={this.state.displayName} />
+					<Route exact path="/home" component={Home} />
+					<Route exact path="/about" component={About} />
+				</Switch>
 
 
 			</div>
