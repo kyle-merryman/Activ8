@@ -25,7 +25,7 @@ export default class SignUp extends Component {
             if (user.data.error) {
                 console.log(user.data.error)
             } else {
-                this.props.history.push('/home')
+                this.props.history.push('/signin')
             }
         }).catch((err) => console.log(err));
     }

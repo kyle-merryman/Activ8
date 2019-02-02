@@ -1,0 +1,22 @@
+.header {
+    background-color: white;
+    background-image: url("/assets/images/geometry.svg");
+    background-repeat: repeat;
+    color: rgb(247, 215, 110);
+    max-height: 3%;
+    padding: 180px 20px; 
+    padding-bottom: 140px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 4rem;
+    position: fixed;
+    height:0px;
+    width: 100%;
+    overflow:visible;
+    pointer-events:none;
+    background:none !important;
+  }

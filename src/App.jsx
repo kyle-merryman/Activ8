@@ -7,6 +7,8 @@ import Home from "./pages/Home"
 import About from './pages/Login/About/About';
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
+import Passions from "./pages/Passions/index";
+
 
 export default class App extends Component {
 	state = {
@@ -55,6 +57,7 @@ export default class App extends Component {
 					<Route exact path="/" component={SignIn} />
 					<Route exact path="/signin" component={SignIn} />
 					<Route exact path="/signup" component={SignUp} />
+					<Route exact path="/passions" component={Passions} />
 					<Navbar logout={this.logout} email={this.state.email} />
 					<Route exact path="/home" component={Home} />
 					<Route exact path="/about" component={About} />
