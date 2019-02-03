@@ -17,6 +17,8 @@ const userSchema = new Schema({
 		googleId: { type: String, required: false }
 	},
 	photos: [],
+	passions: [],
+	newUser: { type: Boolean, default: true }
 
 })
 

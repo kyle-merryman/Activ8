@@ -16,7 +16,7 @@ export default function (props) {
                 <li><a href="#">{props.email} |<i className="fas fa-angle-double-down"></i></a>
                     <ul className="dropdown">
                         <li><a href="/profile">Profile</a></li>
-                        <li><a href="#">Passions</a></li>
+                        <li><a href="/passions">Passions</a></li>
                         <li><a onClick={props.logout} href="#">Log Out</a></li>
                     </ul>
                 </li>

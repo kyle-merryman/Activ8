@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios"
 
+
+var styles = {
+    container: {
+        margin: "20px"
+    }
+}
 export default class SignIn extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +29,12 @@ export default class SignIn extends Component {
         console.log
         axios.post("/auth/login", this.state).then((user) => {
             if (user.data !== null) {
-                this.props.history.push('/home')
+                if (user.data.user.newUser) {
+                    this.props.history.push('/passions');
+                } else {
+                    this.props.history.push('/home');
+                }
+
             }
         }).catch((err) => {
             console.log(err + "\nERROR, INCORRECT USERNAME OR PASSWORD")
@@ -32,7 +43,7 @@ export default class SignIn extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div style={styles.container}>
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="grey-text text-darken-3">Sign In</h5>
                     <div className="input-field">

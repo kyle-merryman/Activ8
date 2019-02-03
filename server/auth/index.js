@@ -24,8 +24,7 @@ router.get('/user', (req, res, next) => {
 	}
 })
 
-router.post(
-	'/login',
+router.post('/login',
 	function (req, res, next) {
 		console.log(req.body)
 		console.log('================')
@@ -77,9 +76,24 @@ router.post('/signup', (req, res) => {
 	})
 })
 
-router.get("/test", (req, res) => {
-	res.json("test");
+router.post("/update-newUser", (req, res) => {
+	User.findByIdAndUpdate(req.user._id, { $set: { newUser: false } }, { new: true }, (err, user) => {
+		if (err) console.log(err);
+		res.json(user);
+	});
 })
+
+router.post("/set-passions", (req, res) => {
+	console.log("USERS PASSIONS", req.body)
+
+	User.findByIdAndUpdate(req.user._id, { $set: { passions: req.body } }, { new: true }, (err, user) => {
+		if (err) console.log(err);
+		res.json(user);
+	})
+})
+
+
+
 
 router.get('/*', function (req, res) {
 	res.sendFile(path.join(__dirname, '../../build/index.html'), function (err) {

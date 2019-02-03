@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+
+var styles = {
+    container: {
+        margin: "20px"
+    }
+}
 export default class SignUp extends Component {
 
     state = {
@@ -32,7 +39,7 @@ export default class SignUp extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div style={styles.container}>
                 <form onSubmit={this.handleSubmit} className="white">
                     <h5 className="grey-text text-darken-3">Sign Up</h5>
                     <div className="input-field">

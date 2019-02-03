@@ -3,12 +3,12 @@ import "./style.css";
 
 function ClickItem(props) {
   return (
-    <p
-    id={`${props.id}`}
+    <p title={props.title}
+      id={`${props.id}`}
       aria-label="click item"
       onClick={() => props.handleClick(props.id)}
       //style={{ backgroundImage: `url("${props.image}")` }}
-      className={`click-item${props.shake ? " shake" : ""} inactive`}
+      className={`test click-item${props.shake ? " shake" : ""} inactive`}
 
     >{props.title}</p>
   );

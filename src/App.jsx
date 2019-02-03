@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import axios from 'axios';
 import Navbar from "./components/Navbar/Navbar";
@@ -48,20 +48,53 @@ export default class App extends Component {
 		})
 	}
 
+
+	LoginContainer = () => {
+		return (
+			<div>
+				<Route exact path="/" component={SignIn} />
+				<Route exact path="/signin" component={SignIn} />
+			</div>
+		)
+
+	}
+
+	SignUpContainer = () => {
+		return (
+			<div>
+				<Route path="/signup" component={SignUp} />
+			</div>
+		)
+
+	}
+	DefaultContainer = () => {
+		return (
+			<div>
+				<Navbar logout={this.logout} email={this.state.email} />
+				<Route exact path="/passions" component={Passions} />
+				<Route exact path="/home" component={Home} />
+				<Route exact path="/about" component={About} />
+			</div>
+		)
+
+	}
 	render() {
 		return (
 			<div>
 
 
-				<Switch>
-					<Route exact path="/" component={SignIn} />
-					<Route exact path="/signin" component={SignIn} />
-					<Route exact path="/signup" component={SignUp} />
-					<Route exact path="/passions" component={Passions} />
-					<Navbar logout={this.logout} email={this.state.email} />
-					<Route exact path="/home" component={Home} />
-					<Route exact path="/about" component={About} />
-				</Switch>
+				<div className="App">
+					<Switch>
+						{/* these routes do not have the navbar */}
+						<Route exact path="(/)" component={this.LoginContainer} />
+						<Route exact path="(/signin)" component={this.LoginContainer} />
+						<Route exact path="(/signup)" component={this.SignUpContainer} />
+
+						{/* these routes have the navbar */}
+						<Route component={this.DefaultContainer} />
+					</Switch>
+				</div>
+
 
 
 			</div>

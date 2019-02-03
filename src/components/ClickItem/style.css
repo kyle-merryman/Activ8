@@ -3,7 +3,7 @@
     border: 5px solid grey !important;
 }
 
-.active {
+.activate {
     background-color: green;
     border: 5px solid green !important;
 }
@@ -11,9 +11,6 @@
 .click-item {
     background-size: cover;
     background-position: center;
-    height: 40px;
-    width: 170px;
-    margin: 8px 25px;
     border: 5px solid rgb(241, 241, 241);
     border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -29,6 +26,11 @@
   .shake {
     animation: shake .5s 0.0125s;
   }
+
+ .test{
+    width: 100%;
+  }
+  
   
   @keyframes shake {
     from,
