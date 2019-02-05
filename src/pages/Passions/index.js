@@ -28,48 +28,55 @@ class Passions extends Component {
     console.log(`testing ${selected} against the array: ${userpassions}`);
     //CHECK WHETHER userpassions.includes(selected), IF NOT -> append, + '.active', -'.inactive' || if yes, remove + '.inactive', -'.active'
 
+
+    //get user data, user ternerary operator to add a key to data
+    axios.get("/auth/user").then(user => {
+      this.setState({
+        userpassions: user.data.user.passions
+      })
+      console.log("user passions1", this.state.userpassions);
+    })
   }
 
+  handleActivePassions(title) {
+    var status = false;
+    for (var i = 0; i < this.state.userpassions.length; i++) {
+      if (title === this.state.userpassions[i]) {
+        status = true;
+      }
+    }
 
-  handleItemClick = id => {
-    console.log(id);
-    var pButton = document.getElementById(id);
-    console.log(pButton);
-    let title = this.state.data[id].title;
-    let passions = this.state.userpassions;
-
-    if (passions.includes(title)) {
-      let selected = this.state.selected;
-      this.setState({ selected: title });
-      console.log(`${selected} was the selected button`);
-      console.log(`${title} is the title of the current button`);
-      let updated = passions.filter(passion => passion !== title);
-      console.log(updated);
-      this.setState({ userpassions: updated });
-      console.log(`The UPDATED passion array: \n${this.state.userpassions}. ${title} should have been removed.`);
-      console.log(`${title} is the current selected button \n DOES ${selected} match ${title}?`);
-      var element = document.getElementById(id);
-
-      //if (document.body.classList.contains("active")) {
-      element.classList.add("inactive");
-      element.classList.remove("activate");
-      //}
+    if (status) {
+      return "activate";
+    }
+    else {
+      return "";
+    }
+  }
+  handleItemClick = e => {
+    console.log(e.target.title);
+    var status = false;
+    for (var i = 0; i < this.state.userpassions.length; i++) {
+      if (e.target.title === this.state.userpassions[i]) {
+        status = true;
+      }
+    }
+    if (status) {
+      var filteredArray = this.state.userpassions.filter(p => {
+        return p != e.target.title;
+      })
+      this.setState({
+        userpassions: filteredArray
+      })
+      console.log("filter test", filteredArray);
     } else {
-      let selected = this.state.selected;
-      this.setState({ selected: title });
-      console.log(`${selected} was the selected button`);
-      passions.push(title);
-      console.log(`The UPDATED passion array: \n${this.state.userpassions}. ${title} should have been added.`);
-      console.log(`${title} is the current selected button \n DOES ${selected} match ${title}?`);
-      var element = document.getElementById(id);
+      var updatedState = this.state.userpassions;
+      updatedState.push(e.target.title);
 
-      //if (document.body.classList.contains("inactive")) {
-      element.classList.add("activate");
-      element.classList.remove("inactive");
-      console.log(element.classList);
-      //}
-    };
-
+      this.setState({
+        userpassions: updatedState
+      })
+    }
   };
   handleSubmitButton = () => {
     console.log("submitted user passions")
@@ -100,7 +107,7 @@ class Passions extends Component {
         <Container>
           {this.state.data.map(item => (
             <ClickItem
-              isActive={this.handleActivePassions}
+              handleActivePassions={this.state.userpassions ? this.handleActivePassions(item.title) : ""}
               key={item.id}
               id={item.id - 1}
               handleClick={this.handleItemClick}
