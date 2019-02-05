@@ -5,6 +5,10 @@ import ClickItem from "../../components/ClickItem";
 import data from "../../data.json";
 import axios from "axios";
 
+import { MDBContainer, MDBAlert } from 'mdbreact';
+import "./passions.css";
+
+
 
 var styles = {
   button: {
@@ -17,7 +21,8 @@ class Passions extends Component {
   state = {
     data,
     userpassions: [],
-    selected: ""
+    selected: "",
+    showAlert: false
   };
 
   componentDidMount() {
@@ -79,6 +84,10 @@ class Passions extends Component {
     }
   };
   handleSubmitButton = () => {
+    this.setState({
+      showAlert: true
+    })
+
     console.log("submitted user passions")
     console.log(this.state.userpassions);
     axios.get("auth/user").then(user => {
@@ -115,10 +124,17 @@ class Passions extends Component {
               keywords={item.keywords}
             />
           ))}
-
+          <div className={`${this.state.showAlert ? "show" : "hide"}`}>
+            <MDBContainer>
+              <MDBAlert color="primary" >
+                <h6 style={{ width: "860px", textAlign: "center" }}>Passions Saved</h6>
+              </MDBAlert>
+            </MDBContainer>
+          </div>
 
           <button onClick={this.handleSubmitButton} className="click-item" style={styles.button}>Save Changes</button>
         </Container>
+
 
 
       </div>
