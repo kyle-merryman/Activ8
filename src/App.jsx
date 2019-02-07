@@ -8,6 +8,7 @@ import About from './pages/Login/About/About';
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import Passions from "./pages/Passions/index";
+import Profile from "./pages/Profile/Profile";
 
 
 export default class App extends Component {
@@ -74,6 +75,7 @@ export default class App extends Component {
 				<Route exact path="/passions" component={Passions} />
 				<Route exact path="/home" component={Home} />
 				<Route exact path="/about" component={About} />
+				<Route exact path="/profile" component={Profile} />
 			</div>
 		)
 
