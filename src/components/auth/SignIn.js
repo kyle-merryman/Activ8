@@ -26,7 +26,6 @@ export default class SignIn extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log
         axios.post("/auth/login", this.state).then((user) => {
             if (user.data !== null) {
                 if (user.data.user.newUser) {
