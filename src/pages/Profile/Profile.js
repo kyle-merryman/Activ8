@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
-import LineGraph from "../../components/LineChart/LineChart";
+import PieChart from "../../components/PieChart/PieChart";
 import { Line } from 'react-chartjs-2';
+import "./Profile.css";
+import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
+import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import axios from 'axios';
 
 export default class Profile extends Component {
 
     state = {
         chartData: {},
+        initials: ""
 
     }
 
     componentDidMount() {
         this.getChartData();
+        axios.get("/auth/user").then(user => {
+            var temp = "";
+            console.log(user.data.user.firstName)
+            temp = user.data.user.firstName[0] + user.data.user.lastName[0];
+            this.setState({
+                initials: temp
+            })
+
+        })
     }
 
     getChartData() {
@@ -46,8 +60,14 @@ export default class Profile extends Component {
 
     render() {
         return (
+
             <div>
-                <LineGraph chartData={this.state.chartData} />
+
+
+                <ProfileHeader initals={this.state.initials} />
+                <div className="pie-chart">
+                    <PieChart chartData={this.state.chartData} />
+                </div>
             </div>
         )
     }

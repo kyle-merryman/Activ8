@@ -19,6 +19,7 @@
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
+
 }
 .menu-area a:hover{
     background: tomato;
@@ -33,6 +34,8 @@
     position: relative;
     width: 100%;
     text-align: center;
+    z-index: 99;
+
 }
 
 .menu-area li:hover .dropdown li{
@@ -53,6 +56,7 @@
     flex-direction: column;
     width: 100%;
     display: none;
+    z-index: 99;
 }
 
 #logo{

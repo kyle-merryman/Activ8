@@ -4,8 +4,9 @@ import { Line, Bar, Pie } from 'react-chartjs-2';
 
 var styles = {
     chart: {
-        width: "1000px",
-        height: "1000px"
+        width: "800px",
+        height: "800px",
+        marginTop: "40px"
     }
 }
 export default function LineChart(props) {
