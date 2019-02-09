@@ -4,12 +4,11 @@ import { Line, Bar, Pie } from 'react-chartjs-2';
 
 var styles = {
     chart: {
-        width: "800px",
-        height: "800px",
-        marginTop: "40px"
+        width: "400px",
+        height: "400px",
     }
 }
-export default function LineChart(props) {
+export default function PieChart(props) {
     return (
         <div className="chart" style={styles.chart}>
             <Pie

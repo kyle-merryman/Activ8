@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2';
 import "./Profile.css";
 import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
+import ProfileInfo from "../../components/ProfileInfo/ProfileInfo";
 import axios from 'axios';
 
 export default class Profile extends Component {
@@ -62,12 +63,12 @@ export default class Profile extends Component {
         return (
 
             <div>
-
-
                 <ProfileHeader initals={this.state.initials} />
-                <div className="pie-chart">
+                <div className="flex-box-profile">
+                    <ProfileInfo />
                     <PieChart chartData={this.state.chartData} />
                 </div>
+
             </div>
         )
     }
