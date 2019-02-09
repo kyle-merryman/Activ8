@@ -5,9 +5,9 @@ export default function ProfileInfo() {
     return (
         <div className="card">
             <div className="card-body">
-                <p>First Name: Justin</p>
-                <p>Last Name: Singh</p>
-                <p>Email: Chaosdoggs522@gmail.com</p>
+                <p><span>First Name:</span> Justin</p>
+                <p><span>Last Name:</span> Singh</p>
+                <p><span>Email:</span> Chaosdoggs522@gmail.com</p>
             </div>
         </div>
     )

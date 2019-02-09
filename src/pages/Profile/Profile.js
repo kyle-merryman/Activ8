@@ -15,7 +15,7 @@ export default class Profile extends Component {
 
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.getChartData();
         axios.get("/auth/user").then(user => {
             var temp = "";
@@ -67,6 +67,7 @@ export default class Profile extends Component {
                 <div className="flex-box-profile">
                     <ProfileInfo />
                     <PieChart chartData={this.state.chartData} />
+
                 </div>
 
             </div>

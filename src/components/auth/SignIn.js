@@ -5,7 +5,8 @@ import axios from "axios"
 
 var styles = {
     container: {
-        margin: "20px"
+        margin: "20px",
+        boxShadow: "0 0 30px -5px hsla(0,0%,61%,.45)"
     }
 }
 export default class SignIn extends Component {

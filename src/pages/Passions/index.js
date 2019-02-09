@@ -25,7 +25,7 @@ class Passions extends Component {
     showAlert: false
   };
 
-  componentDidMount() {
+  componentWillMount() {
     //console.log(selected);
     console.log(this);
     let selected = this.state.selected;

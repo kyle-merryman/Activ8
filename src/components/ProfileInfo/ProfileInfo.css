@@ -1,10 +1,20 @@
 
 .card-body>p{
-    width: 500px;
-    text-align: center;
+    width: 550px;
+}
+.card-body>p>span{
+font-weight: bold;
+text-align: left;
 }
 
 
 .card-body{
     padding: 60px;
+    text-align: center
+}
+.card{
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 2px 21px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 21px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 21px 0px rgba(0,0,0,0.75);
 }

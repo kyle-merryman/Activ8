@@ -8,7 +8,7 @@ export default class Home extends Component {
         user: {}
     }
 
-    componentDidMount() {
+    componentWillMount() {
         axios.get("auth/user").then(user => {
 
             if (user.data === null) {
