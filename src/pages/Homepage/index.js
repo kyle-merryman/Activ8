@@ -1,42 +1,15 @@
-// import React, { Component } from 'react'
-// import axios from "axios";
-
-
-// export default class Home extends Component {
-
-//     state = {
-//         user: {}
-//     }
-
-//     componentDidMount() {
-//         axios.get("auth/user").then(user => {
-
-//             if (user.data === null) {
-//                 window.location.replace("/")
-//             } else {
-//                 console.log(user)
-//                 this.setState({ user: user.data })
-//             }
-//         })
-//     }
-//     render() {
-//         return (
-//             <div>
-//                 <p>Home</p>
-//             </div>
-//         )
-//     }
-// }
-
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Header from "../components/Header";
-import Container from "../components/Container";
-import ClickItem from "../components/ClickItem";
-import userpassions from "./Passions/passions.json";
-import Modal from "../components/Modal";
+import Navbar from "../Navbar";
+import Header from "../Header";
+import Container from "../Container";
+import ClickItem from "../ClickItem";
+import Footer from "../Footer";
+import userpassions from "../../passions.json";
+import Modal from "../Modal";
 
 class Home extends Component {
+
 
   state = {
     userpassions: userpassions,
@@ -52,12 +25,11 @@ class Home extends Component {
     console.log(this);
     console.log(`these are the user's selected passions:`);
     console.log(this.state.userpassions);
-    console.log(this.state.userpassions[0]);
   }
 
 
   handleItemClick = id => {
-    console.log("id test",id);
+    console.log(id);
     let title = this.state.userpassions[id].title;
     let searchword = this.state.userpassions[id].keyword;
     console.log(`The state was ${this.state.selected}`);
