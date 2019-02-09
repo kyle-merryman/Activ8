@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === 'production') {
 
 	app.use(express.static("build"));
 }
-
+// Here we go
 /* Express app ROUTING */
 app.use('/auth', require('./auth'))
 
@@ -63,25 +63,25 @@ app.use(function (err, req, res, next) {
 
 // ==== Starting Server =====
 app.listen(PORT, () => {
-	db.Charity.remove({}, function(err) { 
+	db.Charity.remove({}, function (err) {
 		console.log("collection 'Charity' removed");
-	  });
-	  charityPopulator();
-	
-	  // cron.schedule("*/30 * * * * *", function(){
-	  console.log("Listening on port: " + PORT);
-	
-	  db.Petition.remove({}, function(err) { 
+	});
+	charityPopulator();
+
+	// cron.schedule("*/30 * * * * *", function(){
+	console.log("Listening on port: " + PORT);
+
+	db.Petition.remove({}, function (err) {
 		console.log("collection 'Petition' removed");
-	  });
-	  db.Event.remove({}, function(err) { 
+	});
+	db.Event.remove({}, function (err) {
 		console.log("collection 'Event' removed");
-	  });
-	
-	  //charityPopulator();
-	  fetchPetition.scrapePetitions();
-	  fetchEvent.scrapeEvents();
-	  //console.log(`These are the scrape events` + fetchEvent.scrapeEvents());
-	  //console.log(`These are the scrape events ${fetchEvent.scrapeEvents()}`);
-	  // }); //end of node-cron job
+	});
+
+	//charityPopulator();
+	fetchPetition.scrapePetitions();
+	fetchEvent.scrapeEvents();
+	//console.log(`These are the scrape events` + fetchEvent.scrapeEvents());
+	//console.log(`These are the scrape events ${fetchEvent.scrapeEvents()}`);
+	// }); //end of node-cron job
 })
