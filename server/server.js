@@ -10,8 +10,13 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
-const dbConnection = require('./db') // loads our connection to the mongo database
-const passport = require('./passport')
+const cron = require("node-cron");
+const dbConnection = require('./db'); // loads our connection to the mongo database
+var db = require("./db/models");
+const passport = require('./passport');
+var fetchPetition = require("./controllers/fetchPet");
+var fetchEvent = require("./controllers/fetchEv");
+var charityPopulator = require("./scripts/charityOrg");
 const app = express()
 const PORT = process.env.PORT || 8080
 
@@ -45,6 +50,10 @@ if (process.env.NODE_ENV === 'production') {
 /* Express app ROUTING */
 app.use('/auth', require('./auth'))
 
+// Require our routes
+var routes = require("./routes");
+app.use(routes);
+
 // ====== Error handler ====
 app.use(function (err, req, res, next) {
 	console.log('====== ERROR =======')
@@ -54,5 +63,25 @@ app.use(function (err, req, res, next) {
 
 // ==== Starting Server =====
 app.listen(PORT, () => {
-	console.log(`App listening on PORT: ${PORT}`)
+	db.Charity.remove({}, function(err) { 
+		console.log("collection 'Charity' removed");
+	  });
+	  charityPopulator();
+	
+	  // cron.schedule("*/30 * * * * *", function(){
+	  console.log("Listening on port: " + PORT);
+	
+	  db.Petition.remove({}, function(err) { 
+		console.log("collection 'Petition' removed");
+	  });
+	  db.Event.remove({}, function(err) { 
+		console.log("collection 'Event' removed");
+	  });
+	
+	  //charityPopulator();
+	  fetchPetition.scrapePetitions();
+	  fetchEvent.scrapeEvents();
+	  //console.log(`These are the scrape events` + fetchEvent.scrapeEvents());
+	  //console.log(`These are the scrape events ${fetchEvent.scrapeEvents()}`);
+	  // }); //end of node-cron job
 })
