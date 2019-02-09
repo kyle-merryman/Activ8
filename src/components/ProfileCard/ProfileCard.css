@@ -1,0 +1,17 @@
+.profile-card{
+    background-color:#942323;
+    color: #fff;
+    border-radius: 100px;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    font-size: 100px;
+    font-weight: bold;
+    position: relative;
+    bottom: -7rem;
+}
+#initials{
+   display: flex;
+   justify-content: center;
+   align-items:center;
+}
