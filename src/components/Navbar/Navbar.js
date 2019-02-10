@@ -6,17 +6,36 @@ import axios from "axios";
 
 
 export default function (props) {
-
+    function home(path) {
+        if (path === "/home") {
+            return "#48f0e5"
+        }
+    }
+    function about(path) {
+        if (path === "/about") {
+            return "#48f0e5"
+        }
+    }
+    function profile(path) {
+        if (path === "/profile") {
+            return "#48f0e5"
+        }
+    }
+    function passions(path) {
+        if (path === "/passions") {
+            return "#48f0e5"
+        }
+    }
     return (
         <div className="menu-area">
             <ul>
                 <li><Link id="logo" to="/home">ACTIV8</Link></li>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
+                <li><Link style={{ background: home(window.location.pathname) }} to="/home">Home</Link></li>
+                <li><Link style={{ background: about(window.location.pathname) }} to="/about">About</Link></li>
                 <li><a href="#">{props.email} |<i className="fas fa-angle-double-down"></i></a>
                     <ul className="dropdown">
-                        <li><a href="/profile">Profile</a></li>
-                        <li><a href="/passions">Passions</a></li>
+                        <li><a style={{ background: profile(window.location.pathname) }} href="/profile">Profile</a></li>
+                        <li><a style={{ background: passions(window.location.pathname) }} href="/passions">Passions</a></li>
                         <li><a onClick={props.logout} href="#">Log Out</a></li>
                     </ul>
                 </li>

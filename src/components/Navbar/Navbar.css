@@ -12,8 +12,8 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    background: #ff4b0a;
+    color: black;
+    background: #50fcd1;
     height: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -22,8 +22,7 @@
 
 }
 .menu-area a:hover{
-    background: tomato;
-    color: #fff;
+    background: #4ff7db;
 }
 .menu-area ul{
     list-style: none;
@@ -62,9 +61,8 @@
 #logo{
     font-family: 'Fjalla One', sans-serif;
     font-size: 30px;
-    color: #fff;
+    color: color;
 }
-#logo:hover{
-     background: #cb3529;
-
+#test{
+    background:red;
 }
