@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     color: black;
-    background: #50fcd1;
+    background: #ec407a;
     height: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -22,7 +22,7 @@
 
 }
 .menu-area a:hover{
-    background: #4ff7db;
+    background: #f05faa;
 }
 .menu-area ul{
     list-style: none;

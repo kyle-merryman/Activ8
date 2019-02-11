@@ -8,22 +8,22 @@ import axios from "axios";
 export default function (props) {
     function home(path) {
         if (path === "/home") {
-            return "#48f0e5"
+            return "#f05faa"
         }
     }
     function about(path) {
         if (path === "/about") {
-            return "#48f0e5"
+            return "#f05faa"
         }
     }
     function profile(path) {
         if (path === "/profile") {
-            return "#48f0e5"
+            return "#f05faa"
         }
     }
     function passions(path) {
         if (path === "/passions") {
-            return "#48f0e5"
+            return "#f05faa"
         }
     }
     return (
