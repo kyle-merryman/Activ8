@@ -29,13 +29,14 @@ export default function (props) {
     return (
         <div className="menu-area">
             <ul>
+                <li><a style={{ background: passions(window.location.pathname) }} href="/passions">Passions</a></li>
+                {/* <li><Link style={{ background: home(window.location.pathname) }} to="/home">Home</Link></li> */}
                 <li><Link id="logo" to="/home">ACTIV8</Link></li>
-                <li><Link style={{ background: home(window.location.pathname) }} to="/home">Home</Link></li>
-                <li><Link style={{ background: about(window.location.pathname) }} to="/about">About</Link></li>
+                {/* <li><Link style={{ background: about(window.location.pathname) }} to="/about">About</Link></li> */}
                 <li><a href="#">{props.email} |<i className="fas fa-angle-double-down"></i></a>
                     <ul className="dropdown">
                         <li><a style={{ background: profile(window.location.pathname) }} href="/profile">Profile</a></li>
-                        <li><a style={{ background: passions(window.location.pathname) }} href="/passions">Passions</a></li>
+
                         <li><a onClick={props.logout} href="#">Log Out</a></li>
                     </ul>
                 </li>

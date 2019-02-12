@@ -80,6 +80,14 @@ export default class App extends Component {
 		)
 
 	}
+
+	AboutContainer = () => {
+		return (
+			<div>
+				<Route exact path="/" component={About} />
+			</div>
+		)
+	}
 	render() {
 		return (
 			<div>
@@ -88,7 +96,7 @@ export default class App extends Component {
 				<div className="App">
 					<Switch>
 						{/* these routes do not have the navbar */}
-						<Route exact path="(/)" component={this.LoginContainer} />
+						<Route exact path="(/)" component={this.AboutContainer} />
 						<Route exact path="(/signin)" component={this.LoginContainer} />
 						<Route exact path="(/signup)" component={this.SignUpContainer} />
 
