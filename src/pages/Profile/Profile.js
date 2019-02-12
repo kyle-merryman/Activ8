@@ -11,20 +11,25 @@ export default class Profile extends Component {
 
     state = {
         chartData: {},
-        initials: ""
+        initials: "",
+        firstName: "",
+        lastName: "",
+        email: ""
 
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.getChartData();
         axios.get("/auth/user").then(user => {
             var temp = "";
             console.log(user.data.user.firstName)
             temp = user.data.user.firstName[0] + user.data.user.lastName[0];
             this.setState({
-                initials: temp
+                initials: temp,
+                firstName: user.data.user.firstName,
+                lastName: user.data.user.lastName,
+                email: user.data.user.email
             })
-
         })
     }
 
@@ -65,8 +70,13 @@ export default class Profile extends Component {
             <div>
                 <ProfileHeader initals={this.state.initials} />
                 <div className="flex-box-profile">
-                    <ProfileInfo />
+                    <ProfileInfo
+                        firstName={this.state.firstName}
+                        lastName={this.state.lastName}
+                        email={this.state.email}
+                    />
                     <PieChart chartData={this.state.chartData} />
+
                 </div>
 
             </div>
