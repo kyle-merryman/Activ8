@@ -1,6 +1,6 @@
 .profile-card{
-    background-color:#942323;
-    color: #fff;
+    background-image: url("http://i.imgur.com/p5ezJGH.gif");
+    color: black;
     border-radius: 100px;
     padding: 20px;
     width: 200px;
@@ -9,9 +9,14 @@
     font-weight: bold;
     position: relative;
     bottom: -7rem;
+ 
+-webkit-box-shadow: 0px 2px 21px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 21px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 21px 0px rgba(0,0,0,0.75);
 }
 #initials{
    display: flex;
    justify-content: center;
    align-items:center;
 }
+

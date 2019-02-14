@@ -24,7 +24,7 @@ class Passions extends Component {
     showAlert: false
   };
 
-  componentDidMount() {
+  componentWillMount() {
     //console.log(selected);
     console.log(this);
     let selected = this.state.selected;
@@ -109,8 +109,8 @@ class Passions extends Component {
   render() {
     return (
       <div>
-        <div style={{ background: "grey", color: "white" }} className="jumbotron text-center">
-          <h2>SET YOUR PASSIONS</h2>
+        <div style={{ background: "transparent", color: "black", fontFamily: " 'Anton', sans-serif" }} className="jumbotron text-center">
+          <h2 className="passion-message">SET YOUR PASSIONS</h2>
         </div>
         <Container>
           {this.state.data.map(item => (

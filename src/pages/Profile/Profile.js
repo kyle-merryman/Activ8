@@ -11,24 +11,35 @@ export default class Profile extends Component {
 
     state = {
         chartData: {},
-        initials: ""
-
+        initials: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        numOfPetitions: 0,
+        numOfEvents: 0,
+        numOfCharity: 0,
+        numOfContact: 0
     }
 
-    componentDidMount() {
-        this.getChartData();
+    componentWillMount() {
+
         axios.get("/auth/user").then(user => {
+            this.getChartData(user);
             var temp = "";
             console.log(user.data.user.firstName)
             temp = user.data.user.firstName[0] + user.data.user.lastName[0];
             this.setState({
-                initials: temp
-            })
+                // user data
+                initials: temp,
+                firstName: user.data.user.firstName,
+                lastName: user.data.user.lastName,
+                email: user.data.user.email,
 
+            })
         })
     }
 
-    getChartData() {
+    getChartData(user) {
         // Ajax calls here
         this.setState({
             chartData: {
@@ -37,17 +48,17 @@ export default class Profile extends Component {
                     {
                         label: 'Population',
                         data: [
-                            617594,
-                            181045,
-                            112045,
-                            104545,
+                            user.data.user.numOfPetitions,
+                            user.data.user.numOfEvents,
+                            user.data.user.numOfCharity,
+                            user.data.user.numOfContacts
 
                         ],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.6)',
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(22, 212, 98, 0.6)',
-                            'rgba(250, 171, 11, 0.6)',
+                            'rgba(239,220,127,1)',
+                            'rgba(244, 186, 84, 1)',
+                            'rgba(181,223,237,1)',
 
                         ]
                     }
@@ -65,8 +76,13 @@ export default class Profile extends Component {
             <div>
                 <ProfileHeader initals={this.state.initials} />
                 <div className="flex-box-profile">
-                    <ProfileInfo />
+                    <ProfileInfo
+                        firstName={this.state.firstName}
+                        lastName={this.state.lastName}
+                        email={this.state.email}
+                    />
                     <PieChart chartData={this.state.chartData} />
+
                 </div>
 
             </div>

@@ -95,23 +95,27 @@ router.post("/set-passions", (req, res) => {
 
 router.put("/updateCommit", (req,res)=>{
 
-	var currentCommit;
-	if(req.body==="petition"){
-		currentCommit= "numOfPetitions"
-	}
-	if(req.body==="charity"){
-	currentCommit="numOfCharity"
-	}
-	if(req.body==="event"){
-	currentCommit="numOfEvents"
-	}
-	if(req.body==="contact"){
-	currentCommit="numOfContacts"
-	}
-	User.findByIdAndUpdate(req.user._id, { $set: { currentCommit: +1 } }, { new: true }, (err, user) => {
-		if (err) console.log(err);
-		res.json(user);
+	User.findById(req.user._id).then((user)=>{
+		console.log("\n\n\n\n\n User data", user)
 	})
+
+	// var currentCommit;
+	// if(req.body==="petition"){
+	// 	currentCommit= "numOfPetitions"
+	// }
+	// if(req.body==="charity"){
+	// currentCommit="numOfCharity"
+	// }
+	// if(req.body==="event"){
+	// currentCommit="numOfEvents"
+	// }
+	// if(req.body==="contact"){
+	// currentCommit="numOfContacts"
+	// }
+	// User.findByIdAndUpdate(req.user._id, { $set: { currentCommit: +1 } }, { new: true }, (err, user) => {
+	// 	if (err) console.log(err);
+	// 	res.json(user);
+	// })
 	
 })
 

@@ -4,8 +4,8 @@ import { Line, Bar, Pie } from 'react-chartjs-2';
 
 var styles = {
     chart: {
-        width: "400px",
-        height: "400px",
+        width: "700px",
+        height: "700px",
     }
 }
 export default function PieChart(props) {

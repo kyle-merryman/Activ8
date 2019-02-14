@@ -51,11 +51,10 @@ class Home extends Component {
     // })
   }
 
-  handleItemClick = id => {
-    console.log(this.state.userpassions);
-    console.log("id test", id);
-    let title = this.state.userpassions[id].title;
-    let keyword = this.state.userpassions[id].keyword;
+  handleItemClick = e => {
+ 
+    let title = e.target.title;
+    let keyword = e.target.title;
     console.log(title);
     console.log(`This is the keyword: ${keyword}`);
     // let title = this.state.userpassions[id].title;
@@ -174,7 +173,7 @@ class Home extends Component {
       <ClickItem
       key={item.id}
       id={item.id - 1}
-      handleClick={this.handleItemClick}
+      handleItemClick={this.handleItemClick}
       title={item.title}
       keywords={item.keywords}
       />

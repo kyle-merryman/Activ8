@@ -81,7 +81,7 @@ app.listen(PORT, () => {
 	// //charityPopulator();
 	// fetchPetition.scrapePetitions();
 	// fetchEvent.scrapeEvents();
-	//console.log(`These are the scrape events` + fetchEvent.scrapeEvents());
-	//console.log(`These are the scrape events ${fetchEvent.scrapeEvents()}`);
-	// }); //end of node-cron job
+	// //console.log(`These are the scrape events` + fetchEvent.scrapeEvents());
+	// //console.log(`These are the scrape events ${fetchEvent.scrapeEvents()}`);
+	// // }); //end of node-cron job
 })

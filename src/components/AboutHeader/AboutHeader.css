@@ -1,0 +1,52 @@
+.about-header{
+    width: 100%;
+    height: 100vh;
+    background-image: url("./images/about-header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position-y: -125px;
+    display: flex;
+}
+
+.about{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    background: transparent;
+    margin: 40px
+}
+
+.jumbotron{
+    background: transparent;
+    text-align: center;
+    color: #fff;
+    font-weight: 800px;
+}
+
+
+.center{
+    position: absolute;
+    left: 43%;
+}
+
+#join{
+    padding: 10px;
+    background: #ffc107;
+    border-radius: 20px;
+    border-style: none;
+    transition: .4s;
+}
+#join:hover{
+    padding: 10px;
+    border-radius: 20px;
+    border-style: none;
+    transform: scale(1.1);
+}
+
+#join-link{
+    text-decoration: none;
+}
+

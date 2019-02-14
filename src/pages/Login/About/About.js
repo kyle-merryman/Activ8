@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import AboutHeader from "../../../components/AboutHeader/AboutHeader";
 
 export default function About() {
     return (
         <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iusto distinctio vel laudantium facere ipsam. Tempore ratione praesentium, officia, in pariatur quia autem modi, nesciunt temporibus quos cum magnam quidem?</p>
+            <div className="jumbotron center">
+                <h2>ACTIV8</h2>
+            </div>
+            <AboutHeader />
         </div>
     )
 }

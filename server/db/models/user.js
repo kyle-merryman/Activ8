@@ -19,7 +19,10 @@ const userSchema = new Schema({
 	photos: [],
 	passions: [],
 	newUser: { type: Boolean, default: true },
-	commits: [{event: {type: Number}}, {petition: {type: Number}}, {donate: {type: Number}}, {contact: {type: Number}}]
+	numOfPetitions: { type: Number, default: 0 },
+	numOfContacts: { type: Number, default: 0 },
+	numOfCharity: { type: Number, default: 0 },
+	numOfEvents: { type: Number, default: 0 },
 })
 
 // Define schema methods
