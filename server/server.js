@@ -63,24 +63,24 @@ app.use(function (err, req, res, next) {
 
 // ==== Starting Server =====
 app.listen(PORT, () => {
-	db.Charity.remove({}, function (err) {
-		console.log("collection 'Charity' removed");
-	});
-	charityPopulator();
+	// db.Charity.remove({}, function (err) {
+	// 	console.log("collection 'Charity' removed");
+	// });
+	// charityPopulator();
 
-	// cron.schedule("*/30 * * * * *", function(){
+	// // cron.schedule("*/30 * * * * *", function(){
 	console.log("Listening on port: " + PORT);
 
-	db.Petition.remove({}, function (err) {
-		console.log("collection 'Petition' removed");
-	});
-	db.Event.remove({}, function (err) {
-		console.log("collection 'Event' removed");
-	});
+	// db.Petition.remove({}, function (err) {
+	// 	console.log("collection 'Petition' removed");
+	// });
+	// db.Event.remove({}, function (err) {
+	// 	console.log("collection 'Event' removed");
+	// });
 
-	//charityPopulator();
-	fetchPetition.scrapePetitions();
-	fetchEvent.scrapeEvents();
+	// //charityPopulator();
+	// fetchPetition.scrapePetitions();
+	// fetchEvent.scrapeEvents();
 	//console.log(`These are the scrape events` + fetchEvent.scrapeEvents());
 	//console.log(`These are the scrape events ${fetchEvent.scrapeEvents()}`);
 	// }); //end of node-cron job

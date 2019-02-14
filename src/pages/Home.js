@@ -3,9 +3,7 @@ import ReactDOM from "react-dom";
 import Header from "../components/Header";
 import Container from "../components/Container";
 import ClickItem from "../components/ClickItem";
-import DispChar from "../components/DispChar";
-import DispEve from "../components/DispEve";
-import DispPet from "../components/DispPet";
+import ActionDisp from "../components/ActionDisp";
 import userpassions from "./Passions/passions.json";
 import Modal from "../components/Modal";
 import axios from "axios";
@@ -13,14 +11,30 @@ import axios from "axios";
 class Home extends Component {
 
   state = {
-    userpassions: //[],
-    userpassions,
+    user: "",
+    // userpassions: [],
+    userpassions: userpassions,
     selected: "",
     keyword: "",
     action: "",
-    show: false
+    actionObj: [],
+    show: false,
+    results:[],
+    showCommit:false
   };
 
+
+  checkCommit=()=>{
+    if(this.state.showCommit){
+      this.setState({
+        showCommit:false
+      })
+    }else{
+      this.setState({
+        showCommit:true
+      })
+    }
+  }
   componentDidMount() {
     console.log('this is the Home component as JSON:');
     console.log(this);
@@ -30,7 +44,8 @@ class Home extends Component {
 
     // axios.get("/auth/user").then(user => {
     //     this.setState({
-    //       userpassions: user.data.user.passions
+    //       userpassions: user.data.user.passions,
+    //       user: user.data.user.local.username
     //     });
     //     console.log("user passions1", this.state.userpassions);
     // })
@@ -60,18 +75,70 @@ class Home extends Component {
   event = () => {
     console.log(`I'm going to and event for ${this.state.selected}`);
     this.setState({action: "event"});
+    var search = this.state.keyword;
+    //this.setState({keyword: search});
+    var array = [];
+
+    axios.get(`/api/event/${search}`).then(event => {
+      for (let i = 0; i < event.data.length; i++) {
+        array.push(event.data[i]);
+        // console.log("'AIM NOT AN ONION!!!!!");
+      }
+    console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
+    this.setState({actionObj: array});
+    });
+
     console.log(this.state);
   }
 
   petition = () => {
     console.log(`I'm going to petition for ${this.state.selected}`);
     this.setState({action: "petition"});
-    console.log(this.state);
+    var search = this.state.keyword;
+    //this.setState({keyword: search});
+    var array = [];
+
+    console.log("search test", search)
+    axios.get(`/api/petition/${search}`).then(petition => {
+      console.log(`the petition object is:`);
+      console.log(petition.data);
+      console.log(`the petition LENGTH is:`);
+      console.log(petition.data.length);
+      console.log("one petition in the array is:");
+      console.log(petition.data[1]);
+
+        for (let i = 0; i < petition.data.length; i++) {
+          array.push(petition.data[i]);
+          // console.log("'AIM NOT AN ONION!!!!!");
+        }
+        // console.log(petition);
+    console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
+    console.log("GIT OUTTA ME SWAAAAAAAAAAMMMP!!!!");
+    console.log(array);
+
+    this.setState({actionObj: array});
+    console.log("This is the AXIOS result in the state actionObj:");
+    console.log(this.state.actionObj);
+    })
+
   }
 
   donate = () => {
     console.log(`I'm going to donate to ${this.state.selected}`);
     this.setState({action: "donate"});
+    var search = this.state.keyword;
+    //this.setState({keyword: search});
+    var array = [];
+
+    axios.get(`/api/charity/${search}`).then(charity => {
+      for (let i = 0; i < charity.data.length; i++) {
+        array.push(charity.data[i]);
+        // console.log("'AIM NOT AN ONION!!!!!");
+      }
+    console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
+    this.setState({actionObj: array});
+    });
+
     console.log(this.state);
   }
 
@@ -84,67 +151,43 @@ class Home extends Component {
 
     console.log(`'state.action' has been set to ${this.state.action}`);
     console.log(this.state);
+  }
 
+  displayStuff=()=>{
+   var display = this.state.actionObj.map(item => (
+      <ActionDisp 
+        commitStatus={this.state.showCommit}
+        checkCommit={this.checkCommit}
+        id = {item._id}
+        title={item.title? item.title : item.name} /*username: ${this.state.user}*/
+        url={item.url} 
+        summary={item.summary ? item.summary : "this is a charity"}
+        action = {this.state.action}
+        username = {this.state.user}
+      />
+    
+    ))
+    return display;
+  }
+  displayClickItem=()=>{
+     var display = this.state.userpassions.map(item => (
+      <ClickItem
+      key={item.id}
+      id={item.id - 1}
+      handleClick={this.handleItemClick}
+      title={item.title}
+      keywords={item.keywords}
+      />
+    ))
+    return display;
   }
 
   render() {
-
-    const action = this.state.action;
-    let display;
-
-    if (!action) {
-      display = this.state.userpassions.map(item => (
-        <ClickItem
-        key={item.id}
-        id={item.id - 1}
-        handleClick={this.handleItemClick}
-        title={item.title}
-        keywords={item.keywords}
-        />
-      ))
-    } else if (action == "donate") {
-        var search = this.state.keyword;
-
-        axios.get("/api/charity/" + search).then(charity => {
-            for (let i = 0; i < charity.data.length; i++) {
-            console.log(charity.data[i]);
-            var char = charity.data[i];
-            console.log(`The name is ${char.name}, the id is ${i+1}, the url is ${char.url}`);
-            display = <DispChar name={char.name} id={`charity-${i+1}`} url={char.url}/>
-        }});
-    } else if (action == "event") {
-        var search = this.state.keyword;
-
-        axios.get("/api/event/" + search).then(event => {
-            for (let i = 0; i < event.data.length; i++) {
-            console.log(event.data[i]);
-            var eve = event.data[i];
-            console.log(`The name is ${eve.title}, the id is ${i+1}, the date is ${eve.summary}, the url is ${eve.url}`);
-            display = <DispEve title={eve.title} id={`event-${i+1}`} summary={eve.summary} url={eve.url}/>
-        }});
-    } else if (action == "petition") {
-        var search = this.state.keyword;
-
-        axios.get("/api/petition/" + search).then(petition => {
-            for (let i = 0; i < petition.data.length; i++) {
-            console.log(petition.data[i]);
-            var pet = petition.data[i];
-            console.log(`The name is ${pet.title}, the id is ${i+1}, the summary is ${pet.summary}, the url is ${pet.url}`);
-            display = <DispPet title={pet.title} id={`event-${i+1}`} summary={pet.summary} url={pet.url}/>
-        }});
-    } else {
-      display = <ClickItem
-      handleClick={this.handleItemClick}
-      title={this.state.action}
-      keywords={this.state.keyword}
-      />
-    }
-
     return (
       <div>
         <Header header="What to act on?"/>
         <Container>
-          {display}
+          {this.state.action?this.displayStuff(): this.displayClickItem()}
         </Container>
         <Modal show={this.state.show} handleClose={this.hideModal} >
             <h2>{this.state.selected}</h2>
@@ -153,6 +196,7 @@ class Home extends Component {
             <button onClick={this.donate} className={`donate ${this.state.selected}`} href={"/charity/" + this.state.keyword}>donate</button>
             <button onClick={this.contact} className={`contact ${this.state.selected}`}>contact</button>
         </Modal>
+
       </div>
     )
   }

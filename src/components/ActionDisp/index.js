@@ -1,38 +1,32 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Modal from "../Modal";
+import Commit from "../Commit";
 import "./style.css";
 
-class Dashboard extends Component {
-    state = { show: false }
-  
-    showModal = () => {
-      this.setState({ show: true });
-    }
-    
-    hideModal = () => {
-      this.setState({ show: false });
-    }
-      
-    render() {
-      return (
-        <main>
-          <h1>React Modal</h1>
-          <Modal show={this.state.show} handleClose={this.hideModal} >
-            <p>Modal</p>
-            <p>Data</p>
-          </Modal>
-          <button type='button' onClick={this.showModal}>Open</button>
-        </main>
-      )
-    }
-  }
-  
 
-  
+function ActionDisp(props) {
+  return (
+    <div>
+    {/* <a href={props.url}> */}
+    <p
+      id={`${props.id}`}
+      aria-label="click item"
+      onClick={props.checkCommit}
+      href={props.url}
+      //style={{ backgroundImage: `url("${props.image}")` }}
+      className={`${props.handleActivePassions} test click-item${props.shake ? " shake" : ""} inactive`}
+
+    >
+      {`${props.title} \n ${props.summary}`}
+    </p>
+    {props.commitStatus?<Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit>:""}
+    </div>
+  );
+}
   
   const container = document.createElement('div');
   document.body.appendChild(container);
-  ReactDOM.render(<Dashboard />, container);
+  ReactDOM.render(<ActionDisp />, container);
 
-  export default Dashboard;
+  export default ActionDisp;
