@@ -43,7 +43,7 @@ export default class Profile extends Component {
         // Ajax calls here
         this.setState({
             chartData: {
-                labels: ['Charity', 'Event', 'Petition', 'Contact'],
+                labels: ['Petition', 'Event', 'Charity', 'Contact'],
                 datasets: [
                     {
                         label: 'Population',
@@ -55,8 +55,9 @@ export default class Profile extends Component {
 
                         ],
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.6)',
                             'rgba(239,220,127,1)',
+                            'rgba(255, 99, 132, 0.6)',
+
                             'rgba(244, 186, 84, 1)',
                             'rgba(181,223,237,1)',
 

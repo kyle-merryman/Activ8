@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "title": "Climate Change",
+      "keyword": "climate-change"
+    },
+    {
+      "id": 2,
+      "title": "Housing",
+      "keyword": "homeless"
+    },
+    {
+      "id": 3,
+      "title": "Womens Rights",
+      "keyword": "womens-rights"
+    },
+    {
+      "id": 4,
+      "title": "Veterans",
+      "keyword": "military-veterans"
+    }
+]

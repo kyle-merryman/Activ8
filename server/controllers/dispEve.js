@@ -12,6 +12,7 @@ module.exports = {
         db.Event.find({
             keyword: req.params.id
         }).then((event)=>{
+            console.log(`This is the charity response \n ${event}`);
             res.json(event);
         })
     }

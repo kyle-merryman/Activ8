@@ -1,5 +1,47 @@
 [
     {
+      "keyword": "civil-rights",
+      "name": "American Civil Liberties Union Foundation",
+      "url": "https://www.aclu.org/"
+    },
+    {
+      "keyword": "civil-rights",
+      "name": "NAACP Legal Defense and Educational Fund",
+      "url": "https://www.naacpldf.org/about-us/"
+    },
+    {
+      "keyword": "civil-rights",
+      "name": "Alliance Defending Freedom",
+      "url": "https://www.adflegal.org/about-us/who-we-are"
+    },
+    {
+      "keyword": "civil-rights",
+      "name": "Institute for Free Speech",
+      "url": "https://www.ifs.org/about-us/"
+    },
+    {
+      "keyword": "civil-rights",
+      "name": "LatinoJustice PRLDEF",
+      "url": "https://www.latinojustice.org/en/about"
+    },
+    {
+      "keyword": "civil-rights",
+      "name": "UnidosUS",
+      "url": "https://www.unidosus.org/about-us/"
+    },
+    {
+      "keyword": "civil-rights",
+      "name": "Center for Constitutional Rights",
+      "url": "https://ccrjustice.org/home/who-we-are"
+    },
+    {
+      "keyword": "civil-rights",
+      "name": "National People’s Action",
+      "url": "https://peoplesaction.org/about/values/"
+    },
+
+
+    {
       "keyword": "climate-change",
       "name": "Earthworks",
       "url": "https://earthworks.org/about/"
@@ -15,18 +57,262 @@
       "url": "https://www.sierraclubfoundation.org/about-scf"
     },
     {
+      "keyword": "climate-change",
+      "name": "Water.org",
+      "url": "https://water.org/about-us/"
+    },
+    {
+    "keyword": "climate-change",
+    "name": "World Resources Institute",
+    "url": "https://www.wri.org/our-work"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "American Bird Conservancy",
+      "url": "https://abcbirds.org/about/"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "Center for Biological Diversity",
+      "url": "https://www.biologicaldiversity.org/about/"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "Conservation Fund",
+      "url": "https://www.conservationfund.org/about-us"
+    },
+    {
+    "keyword": "climate-change",
+    "name": "Earth Island Institute",
+    "url": "http://www.earthisland.org/index.php/aboutUs/welcome"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "Environmental Defense Action Fund",
+      "url": " http://www.edfaction.org/about-us"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "Environmental Working Group",
+      "url": "https://www.ewg.org/about-us"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "Food and Water Watch",
+      "url": "https://www.foodandwaterwatch.org/about"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "Keep America Beautiful (National Office)",
+      "url": "https://www.kab.org/about-us"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "National Forest Foundation",
+      "url": "https://www.nationalforests.org/who-we-are"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "National Park Foundation (NPF)",
+      "url": "https://www.nationalparks.org/about-foundation"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "National Park Trust",
+      "url": "https://www.parktrust.org/about/"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "National Wildlife Federation",
+      "url": "https://www.nwf.org/About-Us"
+    },
+    {
+      "keyword": "climate-change",
+      "name": "Waterkeeper Alliance",
+      "url": "https://waterkeeper.org/about/"
+    },
+
+
+    {
       "keyword": "military-veterans",
       "name": "Gary Sinise Foundation",
       "url": "https://www.garysinisefoundation.org/"
     },
+    {
+      "keyword": "military-veterans",
+      "name": "Homes for Our Troops",
+      "url": "https://www.hfotusa.org/"
+    },
+    {
+      "keyword": "military-veterans",
+      "name": "National Military Family Association",
+      "url": "https://www.militaryfamily.org/about-us/"
+    },
+    {
+      "keyword": "military-veterans",
+      "name": "Operation Homefront",
+      "url": "https://www.operationhomefront.org/aboutus"
+    },
+    {
+      "keyword": "military-veterans",
+      "name": "Wounded Warriors Family Support",
+      "url": "https://www.wwfs.org/wounded-warriors-family-support/information-main/about-us"
+    },
+
+
     {
       "keyword": "immigration",
       "name": "Human Rights Initiative",
       "url": "http://www.hrionline.org/about-hri/"
     },
     {
+      "keyword": "immigration",
+      "name": "Hispanics in Philanthropy",
+      "url": "https://hiponline.org/"
+    },
+    {
+      "keyword": "immigration",
+      "name": "National Immigration Law Center",
+      "url": "https://www.nilc.org/about-us/what_we_do/"
+    },
+    {
+      "keyword": "immigration",
+      "name": "Texas Civil Rights Project",
+      "url": "https://texascivilrightsproject.org/who-we-are/"
+    },
+    {
+      "keyword": "immigration",
+      "name": "National Immigration Forum",
+      "url": "https://immigrationforum.org/"
+    },
+    {
+      "keyword": "immigration",
+      "name": "American Civil Liberties Union Foundation",
+      "url": "https://www.aclu.org/"
+    },
+    {
+      "keyword": "immigration",
+      "name": "Catholic Legal Immigration Network Inc (CLINIC)",
+      "url": "https://cliniclegal.org/about-us"
+    },
+    {
+      "keyword": "immigration",
+      "name": "Child Foundation",
+      "url": "https://www.childfoundation.org/page/homepage"
+    },
+    {
+      "keyword": "immigration",
+      "name": "Hispanic Federation",
+      "url": "http://hispanicfederation.org/about/hf/"
+    },
+    {
+      "keyword": "immigration",
+      "name": "Church World Service",
+      "url": "https://cwsglobal.org/about/"
+    },
+
+
+    {
+      "keyword": "refugee",
+      "name": "American Refugee Committee",
+      "url": "http://arcrelief.org/about/"
+    },
+    {
+      "keyword": "refugee",
+      "name": "International Rescue Committee",
+      "url": "https://www.rescue.org/"
+    },
+    {
+      "keyword": "refugee",
+      "name": "World Relief",
+      "url": "https://worldrelief.org/about/"
+    },
+    {
+      "keyword": "refugee",
+      "name": "Anera",
+      "url": "https://www.anera.org/who-we-are/"
+    },
+    {
+      "keyword": "refugee",
+      "name": "Migration Policy Institute",
+      "url": "https://www.migrationpolicy.org/about/about-migration-policy-institute"
+    },
+
+
+    {
       "keyword": "homeless",
       "name": "Coalition for the Homeless",
       "url": "https://nationalhomeless.org/about-us/"
+    },
+    {
+      "keyword": "homeless",
+      "name": "Bowery Residents’ Committee",
+      "url": "http://www.brc.org/"
+    },
+    {
+      "keyword": "homeless",
+      "name": "National Alliance to End Homelessness",
+      "url": "https://endhomelessness.org/"
+    },
+    {
+      "keyword": "homeless",
+      "name": "Habitat for Humanity International (National Office)",
+      "url": "https://www.habitat.org/about"
+    },
+
+    {
+      "keyword": "womens-rights",
+      "name": "9to5 National Association for Working Women",
+      "url": "https://9to5.org/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "American Sexual Health Association",
+      "url": "http://www.ashasexualhealth.org/who-we-are/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "Catholics for Choice",
+      "url": "http://www.catholicsforchoice.org/about-us/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "Equality Now",
+      "url": "https://www.equalitynow.org/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "Astraea Lesbian Foundation for Justice",
+      "url": "https://www.astraeafoundation.org/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "Center for Health and Gender Equity",
+      "url": "http://www.genderhealth.org/about_us/our_mission_and_history/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "Futures Without Violence",
+      "url": "https://www.futureswithoutviolence.org/about-us/our-mission/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "American Jewish World Service",
+      "url": "https://ajws.org/who-we-are/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "Beyond Borders",
+      "url": "https://beyondborders.net/who-we-are/"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "Center for Reproductive Rights",
+      "url": "https://www.reproductiverights.org/about-us"
+    },
+    {
+      "keyword": "womens-rights",
+      "name": "xxx",
+      "url": "xxx"
     }
 ]

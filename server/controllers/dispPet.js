@@ -12,6 +12,7 @@ module.exports = {
         db.Petition.find({
             keyword: req.params.id
         }).then((petition)=>{
+            console.log(`This is the charity response \n ${petition}`);
             res.json(petition);
         })
     }

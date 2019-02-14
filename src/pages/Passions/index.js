@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../../components/Header";
 import Container from "../../components/Container";
 import ClickItem from "../../components/ClickItem";
 import data from "../../data.json";
@@ -58,7 +57,7 @@ class Passions extends Component {
       return "";
     }
   }
-  handleItemClick = e => {
+  handleItemClick = (id, e) => {
     console.log(e.target.title);
     var status = false;
     for (var i = 0; i < this.state.userpassions.length; i++) {
@@ -122,6 +121,7 @@ class Passions extends Component {
               handleClick={this.handleItemClick}
               title={item.title}
               keywords={item.keywords}
+
             />
           ))}
           <div className={`${this.state.showAlert ? "show" : "hide"}`}>
