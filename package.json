@@ -11,6 +11,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "inspector": "^0.5.0",
     "mdbreact": "^4.10.0",
     "mongoose": "^4.13.18",
     "morgan": "^1.9.1",
