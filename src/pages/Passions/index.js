@@ -57,7 +57,7 @@ class Passions extends Component {
       return "";
     }
   }
-  handleItemClick = e => {
+  handleItemClick = (id, e) => {
     console.log(e.target.title);
     var status = false;
     for (var i = 0; i < this.state.userpassions.length; i++) {
@@ -121,6 +121,7 @@ class Passions extends Component {
               handleClick={this.handleItemClick}
               title={item.title}
               keywords={item.keywords}
+
             />
           ))}
           <div className={`${this.state.showAlert ? "show" : "hide"}`}>

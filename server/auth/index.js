@@ -93,31 +93,44 @@ router.post("/set-passions", (req, res) => {
 })
 
 
-router.put("/updateCommit", (req,res)=>{
+router.put("/updateCommit", (req, res) => {
 
-	User.findById(req.user._id).then((user)=>{
-		console.log("\n\n\n\n\n User data", user)
+	User.findById(req.user._id).then(user => {
+		var currentNum;
+		if (req.body.action == "event") {
+			currentNum = (user.numOfEvents + 1);
+			User.findOneAndUpdate({ _id: req.user._id }, { numOfEvents: currentNum }).then((user) => {
+				res.json(user);
+			})
+		}
+		if (req.body.action == "petition") {
+
+			currentNum = (user.numOfPetitions + 1);
+			User.findOneAndUpdate({ _id: req.user._id }, { numOfPetitions: currentNum }).then((user) => {
+				res.json(user);
+			})
+
+		}
+		if (req.body.action == "contact") {
+			currentNum = (user.numOfContacts + 1);
+			User.findOneAndUpdate({ _id: req.user._id }, { numOfContacts: currentNum }).then((user) => {
+				res.json(user);
+			})
+
+		}
+		if (req.body.action == "donate") {
+			currentNum = (user.numOfCharity + 1);
+			User.findOneAndUpdate({ _id: req.user._id }, { numOfCharity: currentNum }).then((user) => {
+				res.json(user);
+			})
+		}
 	})
-
-	// var currentCommit;
-	// if(req.body==="petition"){
-	// 	currentCommit= "numOfPetitions"
-	// }
-	// if(req.body==="charity"){
-	// currentCommit="numOfCharity"
-	// }
-	// if(req.body==="event"){
-	// currentCommit="numOfEvents"
-	// }
-	// if(req.body==="contact"){
-	// currentCommit="numOfContacts"
-	// }
-	// User.findByIdAndUpdate(req.user._id, { $set: { currentCommit: +1 } }, { new: true }, (err, user) => {
-	// 	if (err) console.log(err);
-	// 	res.json(user);
-	// })
-	
 })
+
+
+
+
+
 
 
 

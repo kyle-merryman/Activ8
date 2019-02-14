@@ -19,19 +19,19 @@ class Home extends Component {
     action: "",
     actionObj: [],
     show: false,
-    results:[],
-    showCommit:false
+    results: [],
+    showCommit: false
   };
 
 
-  checkCommit=()=>{
-    if(this.state.showCommit){
+  checkCommit = () => {
+    if (this.state.showCommit) {
       this.setState({
-        showCommit:false
+        showCommit: false
       })
-    }else{
+    } else {
       this.setState({
-        showCommit:true
+        showCommit: true
       })
     }
   }
@@ -51,29 +51,31 @@ class Home extends Component {
     // })
   }
 
-  handleItemClick = e => {
- 
-    let title = e.target.title;
-    let keyword = e.target.title;
+  handleClick = (id, e) => {
+
+    console.log(this.state.userpassions);
+    console.log("id test", id);
+    let title = this.state.userpassions[id].title;
+    let keyword = this.state.userpassions[id].keyword;
     console.log(title);
     console.log(`This is the keyword: ${keyword}`);
     // let title = this.state.userpassions[id].title;
     // let searchword = this.state.userpassions[id].keyword;
     console.log(`The state was ${this.state.selected}`);
-    this.setState({selected: title});
-    this.setState({keyword: keyword});
+    this.setState({ selected: title });
+    this.setState({ keyword: keyword });
     console.log(`The state has been changed to ${this.state.selected}`);
     // this.setState({keyword: searchword});
     this.setState({ show: true });
   };
-  
+
   hideModal = () => {
     this.setState({ show: false });
   }
 
   event = () => {
-    console.log(`I'm going to and event for ${this.state.selected}`);
-    this.setState({action: "event"});
+    console.log("keyword test", this.state.keyword);
+    this.setState({ action: "event" });
     var search = this.state.keyword;
     //this.setState({keyword: search});
     var array = [];
@@ -83,8 +85,9 @@ class Home extends Component {
         array.push(event.data[i]);
         // console.log("'AIM NOT AN ONION!!!!!");
       }
-    console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
-    this.setState({actionObj: array});
+      console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
+      console.log(array);
+      this.setState({ actionObj: array });
     });
 
     console.log(this.state);
@@ -92,7 +95,7 @@ class Home extends Component {
 
   petition = () => {
     console.log(`I'm going to petition for ${this.state.selected}`);
-    this.setState({action: "petition"});
+    this.setState({ action: "petition" });
     var search = this.state.keyword;
     //this.setState({keyword: search});
     var array = [];
@@ -106,25 +109,25 @@ class Home extends Component {
       console.log("one petition in the array is:");
       console.log(petition.data[1]);
 
-        for (let i = 0; i < petition.data.length; i++) {
-          array.push(petition.data[i]);
-          // console.log("'AIM NOT AN ONION!!!!!");
-        }
-        // console.log(petition);
-    console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
-    console.log("GIT OUTTA ME SWAAAAAAAAAAMMMP!!!!");
-    console.log(array);
+      for (let i = 0; i < petition.data.length; i++) {
+        array.push(petition.data[i]);
+        // console.log("'AIM NOT AN ONION!!!!!");
+      }
+      // console.log(petition);
+      console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
+      console.log("GIT OUTTA ME SWAAAAAAAAAAMMMP!!!!");
+      console.log(array);
 
-    this.setState({actionObj: array});
-    console.log("This is the AXIOS result in the state actionObj:");
-    console.log(this.state.actionObj);
+      this.setState({ actionObj: array });
+      console.log("This is the AXIOS result in the state actionObj:");
+      console.log(this.state.actionObj);
     })
 
   }
 
   donate = () => {
     console.log(`I'm going to donate to ${this.state.selected}`);
-    this.setState({action: "donate"});
+    this.setState({ action: "donate" });
     var search = this.state.keyword;
     //this.setState({keyword: search});
     var array = [];
@@ -134,8 +137,8 @@ class Home extends Component {
         array.push(charity.data[i]);
         // console.log("'AIM NOT AN ONION!!!!!");
       }
-    console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
-    this.setState({actionObj: array});
+      console.log("/////////////AXIOS////////////////CALL/////////////////AXIOS///////////////////CALL//////////////////////");
+      this.setState({ actionObj: array });
     });
 
     console.log(this.state);
@@ -143,7 +146,7 @@ class Home extends Component {
 
   contact = () => {
     console.log(`I'm going to contact by representative about ${this.state.selected}`);
-    this.setState({action: "contact"});
+    this.setState({ action: "contact" });
 
     var search = this.state.keyword;
     console.log(`The keyword of this action is ${search}`);
@@ -152,30 +155,30 @@ class Home extends Component {
     console.log(this.state);
   }
 
-  displayStuff=()=>{
-   var display = this.state.actionObj.map(item => (
-      <ActionDisp 
+  displayStuff = () => {
+    var display = this.state.actionObj.map(item => (
+      <ActionDisp
         commitStatus={this.state.showCommit}
         checkCommit={this.checkCommit}
-        id = {item._id}
-        title={item.title? item.title : item.name} /*username: ${this.state.user}*/
-        url={item.url} 
+        id={item._id}
+        title={item.title ? item.title : item.name} /*username: ${this.state.user}*/
+        url={item.url}
         summary={item.summary ? item.summary : "this is a charity"}
-        action = {this.state.action}
-        username = {this.state.user}
+        action={this.state.action}
+        username={this.state.user}
       />
-    
+
     ))
     return display;
   }
-  displayClickItem=()=>{
-     var display = this.state.userpassions.map(item => (
+  displayClickItem = () => {
+    var display = this.state.userpassions.map(item => (
       <ClickItem
-      key={item.id}
-      id={item.id - 1}
-      handleItemClick={this.handleItemClick}
-      title={item.title}
-      keywords={item.keywords}
+        key={item.id}
+        id={item.id - 1}
+        handleClick={this.handleClick}
+        title={item.title}
+        keywords={item.keywords}
       />
     ))
     return display;
@@ -184,16 +187,16 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header header="What to act on?"/>
+        <Header header="What to act on?" />
         <Container>
-          {this.state.action?this.displayStuff(): this.displayClickItem()}
+          {this.state.action ? this.displayStuff() : this.displayClickItem()}
         </Container>
         <Modal show={this.state.show} handleClose={this.hideModal} >
-            <h2>{this.state.selected}</h2>
-            <button onClick={this.event} className={`event ${this.state.selected}`} href={"/event/" + this.state.keyword}>event</button>
-            <button onClick={this.petition} className={`petition ${this.state.selected}`} href={"/petition/" + this.state.keyword}>petition</button>
-            <button onClick={this.donate} className={`donate ${this.state.selected}`} href={"/charity/" + this.state.keyword}>donate</button>
-            <button onClick={this.contact} className={`contact ${this.state.selected}`}>contact</button>
+          <h2>{this.state.selected}</h2>
+          <button onClick={this.event} className={`event ${this.state.selected}`} href={"/event/" + this.state.keyword}>event</button>
+          <button onClick={this.petition} className={`petition ${this.state.selected}`} href={"/petition/" + this.state.keyword}>petition</button>
+          <button onClick={this.donate} className={`donate ${this.state.selected}`} href={"/charity/" + this.state.keyword}>donate</button>
+          <button onClick={this.contact} className={`contact ${this.state.selected}`}>contact</button>
         </Modal>
 
       </div>
