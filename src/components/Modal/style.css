@@ -8,6 +8,8 @@
   }
   
   .modal-main {
+    padding: 20px;
+    text-align: center;
     position:fixed;
     background: white;
     width: 80%;

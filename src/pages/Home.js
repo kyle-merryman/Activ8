@@ -7,6 +7,7 @@ import ActionDisp from "../components/ActionDisp";
 import userpassions from "./Passions/passions.json";
 import Modal from "../components/Modal";
 import axios from "axios";
+import "./Home.css";
 
 class Home extends Component {
 
@@ -20,7 +21,8 @@ class Home extends Component {
     actionObj: [],
     show: false,
     results: [],
-    showCommit: false
+    showCommit: false,
+
   };
 
 
@@ -49,6 +51,7 @@ class Home extends Component {
     //     });
     //     console.log("user passions1", this.state.userpassions);
     // })
+
   }
 
   handleClick = (id, e) => {
@@ -158,6 +161,7 @@ class Home extends Component {
   displayStuff = () => {
     var display = this.state.actionObj.map(item => (
       <ActionDisp
+        hide={this.state.selected}
         commitStatus={this.state.showCommit}
         checkCommit={this.checkCommit}
         id={item._id}
@@ -169,11 +173,13 @@ class Home extends Component {
       />
 
     ))
+
     return display;
   }
   displayClickItem = () => {
     var display = this.state.userpassions.map(item => (
       <ClickItem
+
         key={item.id}
         id={item.id - 1}
         handleClick={this.handleClick}
@@ -181,6 +187,7 @@ class Home extends Component {
         keywords={item.keywords}
       />
     ))
+
     return display;
   }
 
@@ -188,15 +195,17 @@ class Home extends Component {
     return (
       <div>
         <Header header="What to act on?" />
-        <Container>
-          {this.state.action ? this.displayStuff() : this.displayClickItem()}
-        </Container>
+        <div id="headerAct">
+          <Container className>
+            {this.state.action ? this.displayStuff() : this.displayClickItem()}
+          </Container>
+        </div>
         <Modal show={this.state.show} handleClose={this.hideModal} >
           <h2>{this.state.selected}</h2>
-          <button onClick={this.event} className={`event ${this.state.selected}`} href={"/event/" + this.state.keyword}>event</button>
-          <button onClick={this.petition} className={`petition ${this.state.selected}`} href={"/petition/" + this.state.keyword}>petition</button>
-          <button onClick={this.donate} className={`donate ${this.state.selected}`} href={"/charity/" + this.state.keyword}>donate</button>
-          <button onClick={this.contact} className={`contact ${this.state.selected}`}>contact</button>
+          <button onClick={this.event} className={`event b ${this.state.selected}`} href={"/event/" + this.state.keyword}>event</button>
+          <button onClick={this.petition} className={`petition b ${this.state.selected}`} href={"/petition/" + this.state.keyword}>petition</button>
+          <button onClick={this.donate} className={`donate b ${this.state.selected}`} href={"/charity/" + this.state.keyword}>donate</button>
+          <button onClick={this.contact} className={`contact b ${this.state.selected}`}>contact</button>
         </Modal>
 
       </div>

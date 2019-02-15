@@ -5,6 +5,7 @@
     font-size: 30px;
     border-radius: 20px;
     padding: 10px;
+    font-weight: bold;
 }
 .card-body>p>span{
 font-weight: bold;
