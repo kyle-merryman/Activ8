@@ -7,26 +7,33 @@ import "./style.css";
 
 function ActionDisp(props) {
   return (
-    <div>
-    {/* <a href={props.url}> */}
-    <p
-      id={`${props.id}`}
-      aria-label="click item"
-      onClick={props.checkCommit}
-      href={props.url}
-      //style={{ backgroundImage: `url("${props.image}")` }}
-      className={`${props.handleActivePassions} test click-item${props.shake ? " shake" : ""} inactive`}
+    <div className={!props.hide ? "displayNone" : ""}>
+      {/* <a href={props.url}> */}
+      <div className="card">
+        <div onClick={props.checkCommit} className="card-body">
 
-    >
-      {`${props.title} \n ${props.summary}`}
-    </p>
-    {props.commitStatus?<Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit>:""}
+          <p
+            id={`${props.id}`}
+            aria-label="click item"
+
+            href={props.url}
+            //style={{ backgroundImage: `url("${props.image}")` }}
+            className={` box`}
+
+          >
+            {`${props.title} \n ${props.summary}`}
+          </p>
+
+        </div>
+      </div>
+
+      {props.commitStatus ? <Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit> : ""}
     </div>
   );
 }
-  
-  const container = document.createElement('div');
-  document.body.appendChild(container);
-  ReactDOM.render(<ActionDisp />, container);
 
-  export default ActionDisp;
+const container = document.createElement('div');
+document.body.appendChild(container);
+ReactDOM.render(<ActionDisp />, container);
+
+export default ActionDisp;

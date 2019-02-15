@@ -1,0 +1,26 @@
+.displayNone{
+    display: none;
+  }
+  #headerAct{
+    z-index: 99;
+  }
+  .b{
+    background: #ec407a;
+    transition: .2s;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px;
+    border-style: none;
+    border-radius: 10px;
+    margin: 3px;
+    text-decoration: none;
+    
+  }
+  .b:hover{
+    background: #ec407a;
+    transform: scale(1.1)
+  }
+  .b:focus{
+    background: #ec407a;
+  }

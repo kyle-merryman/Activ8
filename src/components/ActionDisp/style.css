@@ -1,0 +1,15 @@
+.card-body{
+    cursor: pointer;
+
+
+}
+.card{
+    transition: .3s;
+    background-color: #ec407a;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+.box{
+    border-style: double;
+}
