@@ -8,7 +8,7 @@ import "./style.css";
 function ActionDisp(props) {
   return (
     <div className={!props.hide ? "displayNone" : ""}>
-      {/* <a href={props.url}> */}
+      <a href={props.url} target={"_blank"}>
       <div className="card">
         <div onClick={props.checkCommit} className="card-body">
 
@@ -28,6 +28,7 @@ function ActionDisp(props) {
       </div>
 
       {props.commitStatus ? <Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit> : ""}
+      </a>
     </div>
   );
 }

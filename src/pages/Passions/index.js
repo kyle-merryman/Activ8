@@ -18,7 +18,7 @@ var styles = {
 }
 class Passions extends Component {
   state = {
-    data,
+    data: data,
     userpassions: [],
     selected: "",
     showAlert: false
@@ -26,7 +26,8 @@ class Passions extends Component {
 
   componentWillMount() {
     //console.log(selected);
-    console.log(this);
+    console.log("SHREK SAYS: THIS IS THE MUTHAFUCKIN STATE, DUNKEYYYYYYYY!!!!");
+    console.log(data);
     let selected = this.state.selected;
     let userpassions = this.state.userpassions;
     console.log(`testing ${selected} against the array: ${userpassions}`);
@@ -45,7 +46,7 @@ class Passions extends Component {
   handleActivePassions(title) {
     var status = false;
     for (var i = 0; i < this.state.userpassions.length; i++) {
-      if (title === this.state.userpassions[i]) {
+      if (title === this.state.userpassions[i].title) {
         status = true;
       }
     }
@@ -57,17 +58,22 @@ class Passions extends Component {
       return "";
     }
   }
-  handleItemClick = (id, e) => {
-    console.log(e.target.title);
+  handleItemClick = (id, e, keywords) => {
+    console.log("keyword test", keywords);
+    var passion = {
+      title: e.target.title,
+      keyword: keywords
+    }
+    console.log(passion);
     var status = false;
     for (var i = 0; i < this.state.userpassions.length; i++) {
-      if (e.target.title === this.state.userpassions[i]) {
+      if (e.target.title === this.state.userpassions[i].title) {
         status = true;
       }
     }
     if (status) {
       var filteredArray = this.state.userpassions.filter(p => {
-        return p != e.target.title;
+        return p.title !== e.target.title;
       })
       this.setState({
         userpassions: filteredArray
@@ -75,7 +81,7 @@ class Passions extends Component {
       console.log("filter test", filteredArray);
     } else {
       var updatedState = this.state.userpassions;
-      updatedState.push(e.target.title);
+      updatedState.push(passion);
 
       this.setState({
         userpassions: updatedState
@@ -103,7 +109,8 @@ class Passions extends Component {
 
   handleNewPassions = () => {
     axios.post("/auth/set-passions", this.state.userpassions).then(user => {
-      console.log("updated users passions");
+      console.log("updated users passions:");
+      console.log(user);
     })
   }
   render() {
@@ -119,9 +126,8 @@ class Passions extends Component {
               key={item.id}
               id={item.id - 1}
               handleClick={this.handleItemClick}
-              title={item.title}
+              title={item.title}//{item.title}
               keywords={item.keywords}
-
             />
           ))}
           <div className={`${this.state.showAlert ? "show" : "hide"}`}>
