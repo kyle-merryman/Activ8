@@ -4,7 +4,8 @@ import Header from "../components/Header";
 import Container from "../components/Container";
 import ClickItem from "../components/ClickItem";
 import ActionDisp from "../components/ActionDisp";
-import userpassions from "./Passions/passions.json";
+//import userpassions from "./Passions/passions.json";
+//import getPassions from "../../server/scripts/passions"
 import Modal from "../components/Modal";
 import axios from "axios";
 import "./Home.css";
@@ -14,7 +15,7 @@ class Home extends Component {
   state = {
     user: "",
     // userpassions: [],
-    userpassions: userpassions,
+    userpassions: [],
     selected: "",
     keyword: "",
     action: "",
@@ -37,7 +38,25 @@ class Home extends Component {
       })
     }
   }
+
+  getPassions() {
+    // axios.get("/api/passions").then(passions => {
+    //     console.log("THIS IS THE PASSSSSSION DONEYYYYK!!!!");
+    //     console.log(passions);
+    //     // this.setState(
+    //     //     {passions: passions}
+    //     // )
+    // })
+    axios.get("/auth/user").then(user => {
+      this.setState({
+        userpassions: user.data.user.passions,
+      });
+      console.log("THESE ARE THE USER PASSIONS BEOTCH", this.state.userpassions);
+    })
+  }
+
   componentDidMount() {
+    this.getPassions();
     console.log('this is the Home component as JSON:');
     console.log(this);
     console.log(`these are the user's selected passions:`);
@@ -54,22 +73,15 @@ class Home extends Component {
 
   }
 
-  handleClick = (id, e) => {
-
-    console.log(this.state.userpassions);
-    console.log("id test", id);
-    let title = this.state.userpassions[id].title;
-    let keyword = this.state.userpassions[id].keyword;
-    console.log(title);
-    console.log(`This is the keyword: ${keyword}`);
-    // let title = this.state.userpassions[id].title;
-    // let searchword = this.state.userpassions[id].keyword;
-    console.log(`The state was ${this.state.selected}`);
-    this.setState({ selected: title });
-    this.setState({ keyword: keyword });
-    console.log(`The state has been changed to ${this.state.selected}`);
-    // this.setState({keyword: searchword});
-    this.setState({ show: true });
+  handleClick = (id, e, keywords) => {
+    let title = e.target.attributes.title.value;//this.state.userpassions[id].title;
+    this.setState({
+      selected: title,
+      keyword: e.target.attributes.name.value,
+      show: true
+    });
+    // this.setState({ keyword: e.target.attributes.name.value });
+    // this.setState({ show: true });
   };
 
   hideModal = () => {
@@ -77,6 +89,7 @@ class Home extends Component {
   }
 
   event = () => {
+    this.hideModal();
     console.log("keyword test", this.state.keyword);
     this.setState({ action: "event" });
     var search = this.state.keyword;
@@ -84,6 +97,7 @@ class Home extends Component {
     var array = [];
 
     axios.get(`/api/event/${search}`).then(event => {
+      console.log("EVENT!!!", event);
       for (let i = 0; i < event.data.length; i++) {
         array.push(event.data[i]);
         // console.log("'AIM NOT AN ONION!!!!!");
@@ -97,6 +111,7 @@ class Home extends Component {
   }
 
   petition = () => {
+    this.hideModal();
     console.log(`I'm going to petition for ${this.state.selected}`);
     this.setState({ action: "petition" });
     var search = this.state.keyword;
@@ -129,6 +144,7 @@ class Home extends Component {
   }
 
   donate = () => {
+    this.hideModal();
     console.log(`I'm going to donate to ${this.state.selected}`);
     this.setState({ action: "donate" });
     var search = this.state.keyword;
@@ -148,6 +164,7 @@ class Home extends Component {
   }
 
   contact = () => {
+    this.hideModal();
     console.log(`I'm going to contact by representative about ${this.state.selected}`);
     this.setState({ action: "contact" });
 
@@ -167,24 +184,26 @@ class Home extends Component {
         id={item._id}
         title={item.title ? item.title : item.name} /*username: ${this.state.user}*/
         url={item.url}
-        summary={item.summary ? item.summary : "this is a charity"}
+        summary={item.summary ? item.summary : ""}
         action={this.state.action}
         username={this.state.user}
       />
 
     ))
-
     return display;
   }
   displayClickItem = () => {
     var display = this.state.userpassions.map(item => (
+      console.log("THIS IS THE MUTHAFUCKING ITEM"),
+      console.log(item.keyword),
+
       <ClickItem
 
         key={item.id}
-        id={item.id - 1}
+        id={item.id} //ADD AN ID #
         handleClick={this.handleClick}
         title={item.title}
-        keywords={item.keywords}
+        keywords={item.keyword}
       />
     ))
 
