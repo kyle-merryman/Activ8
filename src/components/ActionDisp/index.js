@@ -26,9 +26,9 @@ function ActionDisp(props) {
 
         </div>
       </div>
-
-      {props.commitStatus ? <Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit> : ""}
       </a>
+      
+      {props.commitStatus ? <Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit> : ""}
     </div>
   );
 }
