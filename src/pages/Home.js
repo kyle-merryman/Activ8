@@ -38,7 +38,7 @@ class Home extends Component {
       })
     }
   }
-  
+
   getPassions() {
     // axios.get("/api/passions").then(passions => {
     //     console.log("THIS IS THE PASSSSSSION DONEYYYYK!!!!");
@@ -48,10 +48,10 @@ class Home extends Component {
     //     // )
     // })
     axios.get("/auth/user").then(user => {
-        this.setState({
-          userpassions: user.data.user.passions,
-        });
-        console.log("THESE ARE THE USER PASSIONS BEOTCH", this.state.userpassions);
+      this.setState({
+        userpassions: user.data.user.passions,
+      });
+      console.log("THESE ARE THE USER PASSIONS BEOTCH", this.state.userpassions);
     })
   }
 
@@ -75,10 +75,11 @@ class Home extends Component {
 
   handleClick = (id, e, keywords) => {
     let title = e.target.attributes.title.value;//this.state.userpassions[id].title;
-    this.setState({ selected: title,
+    this.setState({
+      selected: title,
       keyword: e.target.attributes.name.value,
       show: true
-      });
+    });
     // this.setState({ keyword: e.target.attributes.name.value });
     // this.setState({ show: true });
   };
@@ -88,6 +89,7 @@ class Home extends Component {
   }
 
   event = () => {
+    this.hideModal();
     console.log("keyword test", this.state.keyword);
     this.setState({ action: "event" });
     var search = this.state.keyword;
@@ -109,6 +111,7 @@ class Home extends Component {
   }
 
   petition = () => {
+    this.hideModal();
     console.log(`I'm going to petition for ${this.state.selected}`);
     this.setState({ action: "petition" });
     var search = this.state.keyword;
@@ -141,6 +144,7 @@ class Home extends Component {
   }
 
   donate = () => {
+    this.hideModal();
     console.log(`I'm going to donate to ${this.state.selected}`);
     this.setState({ action: "donate" });
     var search = this.state.keyword;
@@ -160,6 +164,7 @@ class Home extends Component {
   }
 
   contact = () => {
+    this.hideModal();
     console.log(`I'm going to contact by representative about ${this.state.selected}`);
     this.setState({ action: "contact" });
 
@@ -191,7 +196,7 @@ class Home extends Component {
     var display = this.state.userpassions.map(item => (
       console.log("THIS IS THE MUTHAFUCKING ITEM"),
       console.log(item.keyword),
-      
+
       <ClickItem
 
         key={item.id}

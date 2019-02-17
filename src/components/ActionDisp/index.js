@@ -8,26 +8,26 @@ import "./style.css";
 function ActionDisp(props) {
   return (
     <div className={!props.hide ? "displayNone" : ""}>
-      <a href={props.url} target={"_blank"}>
-      <div className="card">
-        <div onClick={props.checkCommit} className="card-body">
+      <a className="links" href={props.url} target={"_blank"}>
+        <div className="card">
+          <div onClick={props.checkCommit} className="card-body">
 
-          <p
-            id={`${props.id}`}
-            aria-label="click item"
+            <p
+              id={`${props.id}`}
+              aria-label="click item"
 
-            href={props.url}
-            //style={{ backgroundImage: `url("${props.image}")` }}
-            className={` box`}
+              href={props.url}
+              //style={{ backgroundImage: `url("${props.image}")` }}
+              className={` box`}
 
-          >
-            {`${props.title} \n ${props.summary}`}
-          </p>
+            >
+              {`${props.title} \n ${props.summary}`}
+            </p>
 
+          </div>
         </div>
-      </div>
       </a>
-      
+
       {props.commitStatus ? <Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit> : ""}
     </div>
   );

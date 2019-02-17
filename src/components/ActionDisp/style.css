@@ -13,3 +13,10 @@
 .box{
     border-style: double;
 }
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
