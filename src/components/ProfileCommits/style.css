@@ -1,0 +1,29 @@
+.profileButton{
+    padding: 20px;
+    background:red;
+    border-radius: 20px;
+    border: 0;
+    transition: .3s;
+}
+.profileButton:hover{
+   transform: scale(1.08);
+}
+.profileButton:focus{
+    background:red;
+}
+.viewButton{
+    margin-left: 20px;
+    padding: 20px;
+
+    border: 5px solid rgb(226, 223, 223);
+    border-radius: 20px;
+    background: transparent;
+    transition: .3s;
+}
+.viewButton:hover{
+   transform: scale(1.08);
+   background: rgb(226, 223, 223)
+}
+.viewButton:focus{
+    background: transparent;
+}

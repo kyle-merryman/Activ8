@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PieChart from "../../components/PieChart/PieChart";
-import { Line } from 'react-chartjs-2';
 import "./Profile.css";
 import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
-import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import ProfileInfo from "../../components/ProfileInfo/ProfileInfo";
 import axios from 'axios';
+import Header from "../../components/Header/index";
+import ProfileCommits from "../../components/ProfileCommits/ProfileCommits";
+
 
 export default class Profile extends Component {
 
@@ -18,15 +19,29 @@ export default class Profile extends Component {
         numOfPetitions: 0,
         numOfEvents: 0,
         numOfCharity: 0,
-        numOfContact: 0
+        numOfContact: 0,
+        currentCommits: [],
     }
 
     componentWillMount() {
+        this.handleSetUserData();
+    }
 
+    handleRenderCommits = () => {
+
+
+        var currentCommits = this.state.currentCommits.map(c => (
+            <ProfileCommits handleCommitDelete={this.handleCommitDelete} url={c.url} title={c.title} summary={c.summary} id={c.id} />
+        ))
+
+
+        return currentCommits;
+    }
+    handleSetUserData = () => {
         axios.get("/auth/user").then(user => {
+
             this.getChartData(user);
             var temp = "";
-            console.log(user.data.user.firstName)
             temp = user.data.user.firstName[0] + user.data.user.lastName[0];
             this.setState({
                 // user data
@@ -34,11 +49,12 @@ export default class Profile extends Component {
                 firstName: user.data.user.firstName,
                 lastName: user.data.user.lastName,
                 email: user.data.user.email,
+                currentCommits: user.data.user.currentCommits
 
             })
+            console.log("current Commit test", this.state.currentCommits)
         })
     }
-
     getChartData(user) {
         // Ajax calls here
         this.setState({
@@ -71,6 +87,15 @@ export default class Profile extends Component {
         })
     }
 
+    handleCommitDelete = (id) => {
+        var id = {
+            id: id
+        }
+        axios.put("auth/deleteCommit", id).then((test) => {
+            console.log(test);
+            this.handleSetUserData();
+        })
+    }
     render() {
         return (
 
@@ -83,7 +108,9 @@ export default class Profile extends Component {
                         email={this.state.email}
                     />
                     <PieChart chartData={this.state.chartData} />
+                    <Header header={"COMMIT HISTORY"} />
 
+                    {this.state.currentCommits.length ? this.handleRenderCommits() : <h2>There are no current commits</h2>}
                 </div>
 
             </div>

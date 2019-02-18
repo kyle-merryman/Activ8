@@ -187,6 +187,8 @@ class Home extends Component {
         summary={item.summary ? item.summary : ""}
         action={this.state.action}
         username={this.state.user}
+        handlePushCommit={this.handlePushCommit}
+        handleCommitState={this.handleCommitState}
       />
 
     ))
@@ -198,7 +200,6 @@ class Home extends Component {
       console.log(item.keyword),
 
       <ClickItem
-
         key={item.id}
         id={item.id} //ADD AN ID #
         handleClick={this.handleClick}
@@ -208,6 +209,26 @@ class Home extends Component {
     ))
 
     return display;
+  }
+
+  handlePushCommit = () => {
+    var newCommit = {
+      title: this.state.title,
+      url: this.state.url,
+      summary: this.state.summary,
+      id: this.state.id
+    }
+    axios.post("auth/pushCommit", newCommit).then((user) => {
+      console.log("succedded")
+    })
+  }
+  handleCommitState = (title, url, summary, id) => {
+    this.setState({
+      title: title,
+      url: url,
+      summary: summary,
+      id: id
+    })
   }
 
   render() {
