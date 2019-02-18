@@ -161,79 +161,79 @@
 
 
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "Human Rights Initiative",
       "url": "http://www.hrionline.org/about-hri/"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "Hispanics in Philanthropy",
       "url": "https://hiponline.org/"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "National Immigration Law Center",
       "url": "https://www.nilc.org/about-us/what_we_do/"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "Texas Civil Rights Project",
       "url": "https://texascivilrightsproject.org/who-we-are/"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "National Immigration Forum",
       "url": "https://immigrationforum.org/"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "American Civil Liberties Union Foundation",
       "url": "https://www.aclu.org/"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "Catholic Legal Immigration Network Inc (CLINIC)",
       "url": "https://cliniclegal.org/about-us"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "Child Foundation",
       "url": "https://www.childfoundation.org/page/homepage"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "Hispanic Federation",
       "url": "http://hispanicfederation.org/about/hf/"
     },
     {
-      "keyword": "immigration",
+      "keyword": "immigrant-rights",
       "name": "Church World Service",
       "url": "https://cwsglobal.org/about/"
     },
 
 
     {
-      "keyword": "refugee",
+      "keyword": "refugees",
       "name": "American Refugee Committee",
       "url": "http://arcrelief.org/about/"
     },
     {
-      "keyword": "refugee",
+      "keyword": "refugees",
       "name": "International Rescue Committee",
       "url": "https://www.rescue.org/"
     },
     {
-      "keyword": "refugee",
+      "keyword": "refugees",
       "name": "World Relief",
       "url": "https://worldrelief.org/about/"
     },
     {
-      "keyword": "refugee",
+      "keyword": "refugees",
       "name": "Anera",
       "url": "https://www.anera.org/who-we-are/"
     },
     {
-      "keyword": "refugee",
+      "keyword": "refugees",
       "name": "Migration Policy Institute",
       "url": "https://www.migrationpolicy.org/about/about-migration-policy-institute"
     },
@@ -259,6 +259,7 @@
       "name": "Habitat for Humanity International (National Office)",
       "url": "https://www.habitat.org/about"
     },
+
 
     {
       "keyword": "womens-rights",
@@ -310,9 +311,452 @@
       "name": "Center for Reproductive Rights",
       "url": "https://www.reproductiverights.org/about-us"
     },
+
+
     {
-      "keyword": "womens-rights",
-      "name": "xxx",
-      "url": "xxx"
+      "keyword": "animal-rights",
+      "name": "American Humane",
+      "url": "https://www.americanhumane.org/about-us/"
+    },
+    {
+      "keyword": "animal-rights",
+      "name": "PetSmart Charities",
+      "url": "https://www.petsmartcharities.org/what-we-do"
+    },
+    {
+      "keyword": "animal-rights",
+      "name": "Wildlife Conservation Society",
+      "url": "https://www.wcs.org/about-us"
+    },
+
+
+    {
+      "keyword": "\"youth\"-civil-rights",
+      "name": "Boys & Girls Clubs of America",
+      "url": "https://www.bgca.org/about-us"
+    },
+    {
+      "keyword": "\"youth\"-civil-rights",
+      "name": "Girls Inc.",
+      "url": "https://girlsinc.org/about-us/"
+    },
+    {
+      "keyword": "\"youth\"-civil-rights",
+      "name": "National 4-H Council",
+      "url": "https://4-h.org/about/"
+    },
+    {
+      "keyword": "\"youth\"-civil-rights",
+      "name": "Scholarship America",
+      "url": "https://scholarshipamerica.org/about-us/"
+    },
+
+
+    {
+      "keyword": "disaster-relief-training",
+      "name": "American Red Cross",
+      "url": "https://www.redcross.org/local/california/gold-country/about-us.html"
+    },
+    {
+      "keyword": "disaster-relief-training",
+      "name": "Federal Emergency Management Agency",
+      "url": "https://www.fema.gov/about-agency"
+    },
+    {
+      "keyword": "disaster-relief-training",
+      "name": "Team Rubicon",
+      "url": "https://teamrubiconusa.org/about/"
+    },
+    {
+      "keyword": "disaster-relief-training",
+      "name": "Americares",
+      "url": "https://www.americares.org/en/about-us/"
+    },
+    {
+      "keyword": "disaster-relief-training",
+      "name": "Samaritan’s Purse",
+      "url": "https://www.samaritanspurse.org/our-ministry/about-us/"
+    },
+    {
+      "keyword": "disaster-relief-training",
+      "name": "All Hands and Hearts - Smart Response",
+      "url": "https://www.allhandsandhearts.org/about-us/"
+    },
+    {
+      "keyword": "disaster-relief-training",
+      "name": "World Relief",
+      "url": "https://worldrelief.org/about/"
+    },
+
+
+    {
+      "keyword": "famine",
+      "name": "ActionAid USA",
+      "url": "https://www.actionaidusa.org/about/"
+    },
+    {
+      "keyword": "famine",
+      "name": "GlobalGiving",
+      "url": "https://www.globalgiving.org/aboutus/"
+    },
+    {
+      "keyword": "famine",
+      "name": "The Zakat Foundation of America",
+      "url": "https://www.zakat.org/en/about-us/"
+    },
+    {
+      "keyword": "famine",
+      "name": "American Jewish World Service",
+      "url": "https://ajws.org/who-we-are/"
+    },
+    {
+      "keyword": "famine",
+      "name": "ARAHA",
+      "url": "https://araha.org/who-we-are/"
+    },
+    {
+      "keyword": "famine",
+      "name": "Action Against Hunger USA",
+      "url": "https://www.actionagainsthunger.org/about"
+    },
+    {
+      "keyword": "famine",
+      "name": "Oxfam America",
+      "url": "https://www.oxfamamerica.org/explore/about-oxfam/"
+    },
+    {
+      "keyword": "famine",
+      "name": "International Rescue Committee",
+      "url": "https://www.rescue.org/"
+    },
+    {
+      "keyword": "famine",
+      "name": "Americares",
+      "url": "https://www.americares.org/en/about-us/"
+    },
+    {
+      "keyword": "famine",
+      "name": "Mercy-USA for Aid and Development",
+      "url": "https://mercyusa.org/about/"
+    },
+    {
+      "keyword": "famine",
+      "name": "Heart for Africa",
+      "url": "https://www.heartforafrica.org/who-are-we/"
+    },
+
+
+    {
+      "keyword": "drought",
+      "name": "ActionAid USA",
+      "url": "https://www.actionaidusa.org/about/"
+    },
+    {
+      "keyword": "drought",
+      "name": "GlobalGiving",
+      "url": "https://www.globalgiving.org/aboutus/"
+    },
+    {
+      "keyword": "drought",
+      "name": "The Zakat Foundation of America",
+      "url": "https://www.zakat.org/en/about-us/"
+    },
+    {
+      "keyword": "drought",
+      "name": "American Jewish World Service",
+      "url": "https://ajws.org/who-we-are/"
+    },
+    {
+      "keyword": "drought",
+      "name": "ARAHA",
+      "url": "https://araha.org/who-we-are/"
+    },
+    {
+      "keyword": "drought",
+      "name": "Action Against Hunger USA",
+      "url": "https://www.actionagainsthunger.org/about"
+    },
+    {
+      "keyword": "drought",
+      "name": "Oxfam America",
+      "url": "https://www.oxfamamerica.org/explore/about-oxfam/"
+    },
+    {
+      "keyword": "drought",
+      "name": "International Rescue Committee",
+      "url": "https://www.rescue.org/"
+    },
+    {
+      "keyword": "drought",
+      "name": "Americares",
+      "url": "https://www.americares.org/en/about-us/"
+    },
+    {
+      "keyword": "drought",
+      "name": "Mercy-USA for Aid and Development",
+      "url": "https://mercyusa.org/about/"
+    },
+    {
+      "keyword": "drought",
+      "name": "Heart for Africa",
+      "url": "https://www.heartforafrica.org/who-are-we/"
+    },
+
+
+    {
+      "keyword": "mental-health",
+      "name": "Brain & Behavior Research Foundation",
+      "url": "https://www.bbrfoundation.org/about"
+    },
+    {
+      "keyword": "mental-health",
+      "name": "National Alliance on Mental Illness (NAMI)",
+      "url": "https://www.nami.org/about-nami"
+    },
+    {
+      "keyword": "mental-health",
+      "name": "The Arc of the United States",
+      "url": "https://www.thearc.org/who-we-are"
+    },
+    {
+      "keyword": "mental-health",
+      "name": "Trevor Project",
+      "url": "https://www.thetrevorproject.org/"
+    },
+    {
+      "keyword": "mental-health",
+      "name": "American Foundation for Suicide Prevention",
+      "url": "https://afsp.org/"
+    },
+
+
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "World Resources Institute",
+      "url": "https://www.wri.org/our-work"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "Institute for Transportation and Development Policy",
+      "url": "https://www.itdp.org/who-we-are/"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "East Bay Alliance for A Sustainable Economy",
+      "url": "http://workingeastbay.org/about/"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "Global Links",
+      "url": "https://www.globallinks.org/about-us"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "charity: water",
+      "url": "https://my.charitywater.org/about"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "Acadia Center",
+      "url": "https://acadiacenter.org/what-we-do/"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "American Council for an Energy-Efficient Economy ",
+      "url": "https://aceee.org/about-us"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "Environmental and Energy Study Institute",
+      "url": "https://www.eesi.org/about"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "First Nations Development Institute",
+      "url": "https://www.firstnations.org/ways-to-give/native-giving/about/"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "VillageReach",
+      "url": "https://www.villagereach.org/about/"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "Toxic-Free Future",
+      "url": "https://toxicfreefuture.org/who-we-are/mission/"
+    },
+    {
+      "keyword": "sustainable-\"development\"",
+      "name": "Grassroots International",
+      "url": "https://grassrootsonline.org/who-we-are/"
+    },
+
+
+    {
+      "keyword": "education",
+      "name": "Afterschool Alliance",
+      "url": "https://www.afterschoolalliance.org/aboutus.cfm"
+    },
+    {
+      "keyword": "education",
+      "name": "Education Writers Association",
+      "url": "https://www.ewa.org/about-ewa"
+    },
+    {
+      "keyword": "education",
+      "name": "The NEA Foundation",
+      "url": "https://www.neafoundation.org/who-we-are/"
+    },
+    {
+      "keyword": "education",
+      "name": "Student Leadership Network",
+      "url": "https://www.studentleadershipnetwork.org/whoweare/"
+    },
+    {
+      "keyword": "education",
+      "name": "Children Now",
+      "url": "https://www.childrennow.org/about/"
+    },
+    {
+      "keyword": "education",
+      "name": "ACCESS College Foundation",
+      "url": "https://www.accesscollege.org/abou"
+    },
+    {
+      "keyword": "education",
+      "name": "10,000 Degrees",
+      "url": "http://www.10000degrees.org/our-impact/what-we-do/"
+    },
+
+
+    {
+      "keyword": "disabilities",
+      "name": "World Institute on Disability",
+      "url": "https://wid.org/about/"
+    },
+    {
+      "keyword": "disabilities",
+      "name": "United Ability",
+      "url": "https://www.unitedability.org/"
+    },
+    {
+      "keyword": "disabilities",
+      "name": "The Arc of the United States",
+      "url": "https://www.thearc.org/who-we-are"
+    },
+    {
+      "keyword": "disabilities",
+      "name": "National Ability Center",
+      "url": "https://www.discovernac.org/"
+    },
+    {
+      "keyword": "disabilities",
+      "name": "4 Paws for Ability",
+      "url": "https://4pawsforability.org/"
+    },
+
+
+    {
+      "keyword": "lgbt",
+      "name": "Trevor Project",
+      "url": "https://www.thetrevorproject.org/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "LGB & T Community Center",
+      "url": "https://gaycenter.org/about/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "Los Angeles LGBT Center",
+      "url": "https://lalgbtcenter.org/about-the-center"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "Point Foundation",
+      "url": "https://pointfoundation.org/thepoint/mission/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "Resource Center",
+      "url": "https://www.myresourcecenter.org/who-we-are"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "Howard Brown Health Center",
+      "url": "https://howardbrown.org/mission-and-overview/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "GLAD",
+      "url": "https://www.glad.org/about/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "Pride Foundation",
+      "url": "https://pridefoundation.org/about-us/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "Astraea Lesbian Foundation for Justice",
+      "url": "https://www.astraeafoundation.org/about-us/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "SAGE",
+      "url": "https://www.sageusa.org/about-us/"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "Equality Florida Institute",
+      "url": "https://www.eqfl.org/about-equality-florida"
+    },
+    {
+      "keyword": "lgbt",
+      "name": "New Conservatory Theatre Center",
+      "url": "https://www.nctcsf.org/index.php/about/mission"
+    },
+
+
+    {
+      "keyword": "fire-safety",
+      "name": "Firehouse Subs Public Safety Foundation",
+      "url": "https://firehousesubsfoundation.org/about-us/"
+    },
+    {
+      "keyword": "fire-safety",
+      "name": "National Fallen Firefighters Foundation",
+      "url": "https://www.firehero.org/about-us/"
+    },
+    {
+      "keyword": "fire-safety",
+      "name": "Wildland Firefighter Foundation",
+      "url": "https://wffoundation.org/about/"
+    },
+    {
+      "keyword": "fire-safety",
+      "name": "The Leary Firefighters Foundation",
+      "url": "https://www.learyfirefighters.org/about/overview/"
+    },
+    {
+      "keyword": "fire-safety",
+      "name": "Code Green Campaign",
+      "url": "http://codegreencampaign.org/"
+    },
+    {
+      "keyword": "fire-safety",
+      "name": "Firefighters and EMS Foundation",
+      "url": "http://fireemsfoundation.com/"
+    },
+    {
+      "keyword": "fire-safety",
+      "name": "NAEMT Foundation",
+      "url": "http://www.naemt.org/about-naemt"
+    },
+    {
+      "keyword": "fire-safety",
+      "name": "National Volunteer Fire Council",
+      "url": "https://www.nvfc.org/about/"
     }
+
 ]
