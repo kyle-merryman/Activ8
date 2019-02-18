@@ -126,14 +126,24 @@ router.put("/updateCommit", (req, res) => {
 		}
 	})
 })
+router.put("/deleteCommit", (req, res) => {
+	console.log("\n\n\n\n\n\n\n\n\n\n", req.body)
+	User.update(
+		{ _id: req.user._id },
+		{ $pull: { currentCommits: { id: req.body.id } } }
+	).then((user) => {
+		res.json(user);
+	})
+})
+router.post("/pushCommit", (req, res) => {
+	User.findByIdAndUpdate(
+		{ _id: req.user._id },
+		{ $push: { currentCommits: req.body } }
+	).then((user) => {
+		res.json(user);
+	})
 
-
-
-
-
-
-
-
+})
 
 router.get('/*', function (req, res) {
 	res.sendFile(path.join(__dirname, '../../build/index.html'), function (err) {

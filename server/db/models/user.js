@@ -23,6 +23,7 @@ const userSchema = new Schema({
 	numOfContacts: { type: Number, default: 0 },
 	numOfCharity: { type: Number, default: 0 },
 	numOfEvents: { type: Number, default: 0 },
+	currentCommits: []
 })
 
 // Define schema methods

@@ -9,8 +9,10 @@ function ActionDisp(props) {
   return (
     <div className={!props.hide ? "displayNone" : ""}>
       <a className="links" href={props.url} target={"_blank"}>
-        <div className="card">
-          <div onClick={props.checkCommit} className="card-body">
+        <div onClick={() => props.handleCommitState(props.title, props.url, props.summary, props.id)} className="card">
+          <div
+            onClick={props.checkCommit}
+            className="card-body">
 
             <p
               id={`${props.id}`}
@@ -28,7 +30,7 @@ function ActionDisp(props) {
         </div>
       </a>
 
-      {props.commitStatus ? <Commit checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit> : ""}
+      {props.commitStatus ? <Commit handlePushCommit={props.handlePushCommit} checkCommit={props.checkCommit} current={props.action} visible={true} username={props.username}></Commit> : ""}
     </div>
   );
 }

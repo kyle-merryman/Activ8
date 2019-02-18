@@ -10,8 +10,10 @@ const Commit = (props) => {
       action: action
     }
     props.checkCommit();
-    axios.put("/auth/updateCommit", action).then(() => {
 
+    props.handlePushCommit();
+
+    axios.put("/auth/updateCommit", action).then(() => {
 
 
     }).catch(err => console.log(err))
