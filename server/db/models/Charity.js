@@ -13,22 +13,18 @@ var charitySchema = new Schema({
   keyword: {
     type: String,
     required: true,
-    unique: true
 
-    //unique: { index: { unique: true } }
   },
   // summary, a string, must be entered
   name: {
     type: String,
     required: true,
-    unique: true
 
   },
   // url, a string, must be entered
   url: {
     type: String,
     required: true,
-    unique: true
   },
   // date is just a string
   date: {

@@ -18,21 +18,18 @@ var petitionSchema = new Schema({
   title: {
     type: String,
     required: true,
-    unique: true
     //unique: { index: { unique: true } }
   },
   // summary, a string, must be entered
   summary: {
     type: String,
     required: true,
-    unique: true
 
   },
   // url, a string, must be entered
   url: {
     type: String,
     required: true,
-    unique: true
 
   },
   // date is just a string
