@@ -5,16 +5,13 @@ var scrapeEv = require("../scripts/scrapeEv");
 
 module.exports = {
   scrapeEvents: function (req, res) {
-    //var allEvents = [];
     var keywords = ["climate-change", "youth", "health", "international-development", "disability", "mental-health", "famine", "drought", "immigration", "military-veterans", "homeless", "education", "womens-rights", "animal-rights", "disaster-relief", "lgbt"];
 
     for (i = 0; i < keywords.length; i++) {
       console.log("hit scrapeEvents");
-    /*return*/ scrapeEv(keywords[i]).then(function (events) {
+      scrapeEv(keywords[i]).then(function (events) {
         console.log("...INSERTING Events into db");
-        // then insert articles into the db
-        //allEvents.push(events);
-        // console.log(events);
+
         return db.Event.create(events);
       })
         .then(function (dbEvent) {

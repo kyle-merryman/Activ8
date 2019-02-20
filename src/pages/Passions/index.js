@@ -25,21 +25,15 @@ class Passions extends Component {
   };
 
   componentWillMount() {
-    //console.log(selected);
-    console.log("SHREK SAYS: THIS IS THE MUTHAFUCKIN STATE, DUNKEYYYYYYYY!!!!");
-    console.log(data);
+
     let selected = this.state.selected;
     let userpassions = this.state.userpassions;
-    console.log(`testing ${selected} against the array: ${userpassions}`);
     //CHECK WHETHER userpassions.includes(selected), IF NOT -> append, + '.active', -'.inactive' || if yes, remove + '.inactive', -'.active'
-
-
     //get user data, user ternerary operator to add a key to data
     axios.get("/auth/user").then(user => {
       this.setState({
         userpassions: user.data.user.passions
       })
-      console.log("user passions1", this.state.userpassions);
     })
   }
 
@@ -59,12 +53,10 @@ class Passions extends Component {
     }
   }
   handleItemClick = (id, e, keywords) => {
-    console.log("keyword test", keywords);
     var passion = {
       title: e.target.title,
       keyword: keywords
     }
-    console.log(passion);
     var status = false;
     for (var i = 0; i < this.state.userpassions.length; i++) {
       if (e.target.title === this.state.userpassions[i].title) {
@@ -78,7 +70,6 @@ class Passions extends Component {
       this.setState({
         userpassions: filteredArray
       })
-      console.log("filter test", filteredArray);
     } else {
       var updatedState = this.state.userpassions;
       updatedState.push(passion);
@@ -92,13 +83,9 @@ class Passions extends Component {
     this.setState({
       showAlert: true
     })
-
-    console.log("submitted user passions")
-    console.log(this.state.userpassions);
     axios.get("auth/user").then(user => {
       if (user.data.user.newUser) {
         axios.post("/auth/update-newUser").then(user => {
-          console.log("updated new user to old user");
           this.handleNewPassions();
         })
       } else {
@@ -109,8 +96,6 @@ class Passions extends Component {
 
   handleNewPassions = () => {
     axios.post("/auth/set-passions", this.state.userpassions).then(user => {
-      console.log("updated users passions:");
-      console.log(user);
     })
   }
   render() {
@@ -126,7 +111,7 @@ class Passions extends Component {
               key={item.id}
               id={item.id - 1}
               handleClick={this.handleItemClick}
-              title={item.title}//{item.title}
+              title={item.title}
               keywords={item.keywords}
             />
           ))}

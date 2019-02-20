@@ -29,7 +29,6 @@ export default class SignUp extends Component {
     handleSubmit = (e) => {
 
         e.preventDefault();
-        console.log("test");
         axios.post("/auth/signup", this.state).then((user) => {
             if (user.data.error) {
                 console.log(user.data.error)

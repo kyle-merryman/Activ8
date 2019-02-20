@@ -52,7 +52,6 @@ export default class Profile extends Component {
                 currentCommits: user.data.user.currentCommits
 
             })
-            console.log("current Commit test", this.state.currentCommits)
         })
     }
     getChartData(user) {
@@ -92,7 +91,6 @@ export default class Profile extends Component {
             id: id
         }
         axios.put("auth/deleteCommit", id).then((test) => {
-            console.log(test);
             this.handleSetUserData();
         })
     }
