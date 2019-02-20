@@ -1,17 +1,10 @@
 var db = require("../db/models");
 
 module.exports = {
-    filterChar: function(req, res) {
-        
-        // .filter(charity => charity.keyword = req.params.id).then(function(charities) {
-        //     res.json(charities);
-        //     console.log(`Below are the filtered charities: \n`);
-        //     console.log(charities);
-        // });
-
+    filterChar: function (req, res) {
         db.Charity.find({
             keyword: req.params.id
-        }).then((charity)=>{
+        }).then((charity) => {
             console.log(`This is the charity response \n ${charity}`);
             res.json(charity);
         })

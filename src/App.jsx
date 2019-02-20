@@ -16,7 +16,6 @@ export default class App extends Component {
 		email: ""
 	}
 	componentDidMount() {
-		console.log(this.props)
 		axios.get("/auth/user").then(user => {
 			if (user.data.user !== null) {
 
@@ -27,7 +26,6 @@ export default class App extends Component {
 	//this fires everytime a change occurs within state, this is how we load data into the navbar
 	componentDidUpdate() {
 		if (this.state.email === "") {
-			console.log(this.props)
 			axios.get("/auth/user").then(user => {
 				if (user.data.user !== null) {
 
@@ -37,11 +35,6 @@ export default class App extends Component {
 		}
 
 	}
-
-	test = () => {
-		console.log("a works");
-	}
-
 	logout = (event) => {
 		event.preventDefault();
 		axios.post("/auth/logout").then(res => {

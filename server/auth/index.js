@@ -15,8 +15,7 @@ router.get(
 
 // this route is just used to get the user basic info
 router.get('/user', (req, res, next) => {
-	console.log('===== user!!======')
-	console.log(req.user)
+
 	if (req.user) {
 		return res.json({ user: req.user })
 	} else {
@@ -26,17 +25,13 @@ router.get('/user', (req, res, next) => {
 
 router.post('/login',
 	function (req, res, next) {
-		console.log(req.body)
-		console.log('================')
 		next()
 	},
 	passport.authenticate('local'),
 	(req, res) => {
-		console.log('POST to /login')
 		const user = JSON.parse(JSON.stringify(req.user)) // hack
 		const cleanUser = Object.assign({}, user)
 		if (cleanUser.local) {
-			console.log(`Deleting ${cleanUser.local.password}`)
 			delete cleanUser.local.password
 		}
 		res.json({ user: cleanUser })
@@ -84,8 +79,6 @@ router.post("/update-newUser", (req, res) => {
 })
 
 router.post("/set-passions", (req, res) => {
-	console.log("USERS PASSIONS", req.body)
-
 	User.findByIdAndUpdate(req.user._id, { $set: { passions: req.body } }, { new: true }, (err, user) => {
 		if (err) console.log(err);
 		res.json(user);
@@ -127,7 +120,6 @@ router.put("/updateCommit", (req, res) => {
 	})
 })
 router.put("/deleteCommit", (req, res) => {
-	console.log("\n\n\n\n\n\n\n\n\n\n", req.body)
 	User.update(
 		{ _id: req.user._id },
 		{ $pull: { currentCommits: { id: req.body.id } } }
