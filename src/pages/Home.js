@@ -73,10 +73,8 @@ class Home extends Component {
     var array = [];
 
     axios.get(`/api/event/${search}`).then(event => {
-      for (let i = 0; i < event.data.length; i++) {
-        array.push(event.data[i]);
-      }
-      this.setState({ actionObj: array });
+
+      this.setState({ actionObj: event.data });
     });
   }
 
@@ -86,10 +84,7 @@ class Home extends Component {
     var search = this.state.keyword;
     var array = [];
     axios.get(`/api/petition/${search}`).then(petition => {
-      for (let i = 0; i < petition.data.length; i++) {
-        array.push(petition.data[i]);
-      }
-      this.setState({ actionObj: array });
+      this.setState({ actionObj: petition.data });
 
     }
     )
@@ -103,11 +98,8 @@ class Home extends Component {
     //this.setState({keyword: search});
     var array = [];
     axios.get(`/api/charity/${search}`).then(charity => {
-      for (let i = 0; i < charity.data.length; i++) {
-        array.push(charity.data[i]);
 
-      }
-      this.setState({ actionObj: array });
+      this.setState({ actionObj: charity.data });
     });
   }
 
