@@ -17,17 +17,22 @@ var eventSchema = new Schema({
   title: {
     type: String,
     required: true,
-    unique: { index: { unique: true } }
+    unique: true
+
   },
   // summary, a string, must be entered
   summary: {
     type: String,
-    required: true
+    required: true,
+    unique: true
+
   },
   // url, a string, must be entered
   url: {
     type: String,
-    required: true
+    required: true,
+    unique: true
+
   },
   // date is just a string
   date: {

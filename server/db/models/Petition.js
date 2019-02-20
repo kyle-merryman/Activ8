@@ -18,17 +18,22 @@ var petitionSchema = new Schema({
   title: {
     type: String,
     required: true,
+    unique: true
     //unique: { index: { unique: true } }
   },
   // summary, a string, must be entered
   summary: {
     type: String,
-    required: true
+    required: true,
+    unique: true
+
   },
   // url, a string, must be entered
   url: {
     type: String,
-    required: true
+    required: true,
+    unique: true
+
   },
   // date is just a string
   date: {
@@ -42,7 +47,7 @@ var petitionSchema = new Schema({
 });
 
 // Create the Headline model using the headlineSchema
-var Petition  = mongoose.model("Petition", petitionSchema);
+var Petition = mongoose.model("Petition", petitionSchema);
 
 // Export the Headline model
 module.exports = Petition;
