@@ -89,7 +89,10 @@ class Home extends Component {
       for (let i = 0; i < petition.data.length; i++) {
         array.push(petition.data[i]);
       }
-    })
+      this.setState({ actionObj: array });
+
+    }
+    )
 
   }
 
