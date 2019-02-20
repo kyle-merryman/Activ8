@@ -68,7 +68,7 @@ app.listen(PORT, () => {
 	});
 	charityPopulator();
 
-	cron.schedule("*/30 * * * * *", function () {
+	cron.schedule("*/30000 * * * * *", function () {
 
 
 		db.Petition.remove({}, function (err) {
